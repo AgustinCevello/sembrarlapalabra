@@ -1,0 +1,222 @@
+.contacto-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: linear-gradient(180deg, var(--background-color) 0%, #e8f0e8 100%);
+}
+
+.contacto-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Información de Contacto */
+.contacto-info {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contacto-info-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.contacto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.contacto-item:last-of-type {
+  border-bottom: none;
+}
+
+.contacto-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contacto-icon-img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.contacto-details h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contacto-details p,
+.contacto-details a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contacto-details a:hover {
+  color: var(--secondary-color);
+}
+
+.talleres-info {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--background-color);
+  border-radius: 12px;
+}
+
+.talleres-info h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.talleres-info p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.talleres-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.talleres-list li {
+  color: var(--text-color);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+/* Formulario */
+.contacto-form-container {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contacto-form-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  background-color: var(--background-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--white);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  margin-top: var(--spacing-md);
+  width: 100%;
+}
+
+/* Misión */
+.mision-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(44, 95, 45, 0.2);
+}
+
+.mision-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--spacing-md);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.mision-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contacto-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .contacto-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .contacto-info,
+  .contacto-form-container {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .contacto-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mision-section {
+    padding: var(--spacing-md);
+  }
+}

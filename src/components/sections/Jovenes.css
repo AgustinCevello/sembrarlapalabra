@@ -1,0 +1,154 @@
+.jovenes-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--background-color);
+}
+
+.versiculo-card {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  box-shadow: 0 8px 24px rgba(44, 95, 45, 0.2);
+}
+
+.versiculo-texto {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.versiculo-referencia {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.jovenes-subsection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.subsection-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg);
+  line-height: 1.7;
+}
+
+.personajes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.problematicas-subsection {
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.problematicas-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin-top: var(--spacing-lg);
+}
+
+.problematicas-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.problematicas-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.problematicas-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.problematicas-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problematicas-icon {
+  font-size: 6rem;
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(151, 188, 98, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .jovenes-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .versiculo-card {
+    padding: var(--spacing-md);
+  }
+
+  .problematicas-card {
+    grid-template-columns: 1fr;
+  }
+
+  .problematicas-image {
+    order: -1;
+  }
+
+  .problematicas-icon {
+    width: 120px;
+    height: 120px;
+    font-size: 5rem;
+  }
+
+  .problematicas-actions {
+    flex-direction: column;
+  }
+
+  .problematicas-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .personajes-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .problematicas-subsection {
+    padding: var(--spacing-md);
+  }
+}

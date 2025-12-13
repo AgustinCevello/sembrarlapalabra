@@ -1,0 +1,64 @@
+.libros-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: linear-gradient(180deg, #f0f4f0 0%, var(--background-color) 100%);
+}
+
+.section-intro {
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  line-height: 1.7;
+}
+
+.libros-subsection {
+  margin-bottom: var(--spacing-xl);
+}
+
+.libros-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.libros-destacados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.otros-libros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Efecto especial para libros destacados */
+.libros-destacados-grid .book-card {
+  border: 2px solid transparent;
+  transition: all var(--transition-normal);
+}
+
+.libros-destacados-grid .book-card:hover {
+  border-color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .libros-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .libros-destacados-grid,
+  .otros-libros-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .libros-destacados-grid,
+  .otros-libros-grid {
+    grid-template-columns: 1fr;
+  }
+}

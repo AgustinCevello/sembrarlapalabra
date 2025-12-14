@@ -32,7 +32,7 @@ export const otrosLibros = [
     id: 5,
     titulo: "No dejes tu cerebro en la puerta",
     autor: "Josh McDowell & Bob Hostetler",
-    tapa: "/src/assets/images/TapasDeLibros/TapaNoDejesTuCerebroEnLaPpuerta.png"
+    tapa: "../assets/images/TapasDeLibros/TapaNoDejesTuCerebroEnLaPpuerta.png"
   },
   {
     id: 6,

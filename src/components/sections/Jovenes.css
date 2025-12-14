@@ -54,59 +54,64 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.problematicas-card {
+.problematicas-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-lg);
-  align-items: center;
   margin-top: var(--spacing-lg);
 }
 
-.problematicas-content h4 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-md);
-}
-
-.problematicas-content p {
-  color: var(--text-color);
-  line-height: 1.7;
-  margin-bottom: var(--spacing-lg);
-}
-
-.problematicas-actions {
+.problematica-card {
+  background-color: var(--background-color);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
   display: flex;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.problematicas-image {
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
 }
 
-.problematicas-icon {
-  font-size: 6rem;
+.problematica-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.problematica-icon {
+  font-size: 3rem;
   background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-  width: 150px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(151, 188, 98, 0.3);
-  animation: float 3s ease-in-out infinite;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 16px rgba(151, 188, 98, 0.3);
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.problematica-nombre {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.problematica-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+  margin-top: auto;
+}
+
+.problematica-actions .btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
 }
 
 /* Responsive */
@@ -119,36 +124,15 @@
     padding: var(--spacing-md);
   }
 
-  .problematicas-card {
-    grid-template-columns: 1fr;
-  }
-
-  .problematicas-image {
-    order: -1;
-  }
-
-  .problematicas-icon {
-    width: 120px;
-    height: 120px;
-    font-size: 5rem;
-  }
-
-  .problematicas-actions {
-    flex-direction: column;
-  }
-
-  .problematicas-actions .btn {
-    width: 100%;
+  .problematicas-subsection {
+    padding: var(--spacing-md);
   }
 }
 
 @media (max-width: 480px) {
-  .personajes-grid {
+  .personajes-grid,
+  .problematicas-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-  }
-
-  .problematicas-subsection {
-    padding: var(--spacing-md);
   }
 }

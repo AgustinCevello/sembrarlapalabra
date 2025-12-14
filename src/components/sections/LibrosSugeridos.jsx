@@ -23,6 +23,7 @@ const LibrosSugeridos = () => {
                 tapa={libro.tapa}
                 descripcion={libro.descripcion}
                 mercadoLibreUrl={libro.mercadoLibreUrl}
+                enlaceExterno={libro.enlaceExterno}
               />
             ))}
           </div>

@@ -62,12 +62,36 @@
 .resource-card-actions .btn {
   flex: 1;
   min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.btn-icon-descarga {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.btn-outline .btn-icon-descarga {
+  filter: none;
+}
+
+.btn-outline:hover .btn-icon-descarga {
+  filter: brightness(0) invert(1);
 }
 
 .modal-actions {
   margin-top: var(--spacing-md);
   display: flex;
   justify-content: center;
+}
+
+.modal-actions .btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
 @media (max-width: 768px) {

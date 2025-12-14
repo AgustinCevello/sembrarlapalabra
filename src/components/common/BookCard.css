@@ -66,25 +66,61 @@
   flex: 1;
 }
 
-.book-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  color: var(--primary-color);
-  font-weight: 500;
-  text-decoration: none;
-  transition: color var(--transition-fast);
+.book-card-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
   margin-top: auto;
 }
 
-.book-card-link:hover {
-  color: var(--accent-color);
+.book-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem 1.25rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  background-color: transparent;
 }
 
-.ml-icon {
-  width: 24px;
-  height: 24px;
+.book-card-link:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.book-card-link:hover .ml-icon-large,
+.book-card-link:hover .enlace-icon {
+  filter: brightness(0) invert(1);
+}
+
+.ml-icon-large {
+  width: 32px;
+  height: 32px;
   object-fit: contain;
+  transition: filter var(--transition-fast);
+}
+
+.enlace-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: filter var(--transition-fast);
+}
+
+.book-card-link-externo {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.book-card-link-externo:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
 }
 
 @media (max-width: 768px) {

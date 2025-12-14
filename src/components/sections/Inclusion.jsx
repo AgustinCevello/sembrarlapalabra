@@ -1,6 +1,9 @@
 import ResourceCard from '../common/ResourceCard';
 import Button from '../common/Button';
 import { inclusionData, recursosInclusionData } from '../../data/inclusionData';
+import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.png';
+import DescargaIcon from '../../assets/icons/DescargaLogo.png';
+import { getDrivePreviewUrl } from '../../utils/driveHelpers';
 import './Inclusion.css';
 
 const Inclusion = () => {
@@ -32,7 +35,7 @@ const Inclusion = () => {
             <div className="libro-destacado-actions">
               <Button 
                 variant="primary"
-                onClick={() => window.open(`https://drive.google.com/file/d/${libro.capitulosMuestra.fileId}/preview`, '_blank')}
+                onClick={() => window.open(getDrivePreviewUrl(libro.capitulosMuestra.fileId), '_blank')}
               >
                 Ver Capítulos de Muestra
               </Button>
@@ -41,9 +44,9 @@ const Inclusion = () => {
                 onClick={() => window.open(libro.mercadoLibreUrl, '_blank')}
               >
                 <img 
-                  src="/src/assets/icons/MercadoLibreLogo.png" 
+                  src={MercadoLibreIcon}
                   alt="MercadoLibre" 
-                  className="btn-icon"
+                  className="btn-icon-ml"
                 />
                 Comprar
               </Button>
@@ -51,6 +54,20 @@ const Inclusion = () => {
           </div>
         </div>
 
+        {/* Recursos para Inclusión */}
+        <div className="recursos-inclusion" id="inclusion-recursos">
+          <h3 className="subsection-title">Recursos para Clases Bíblicas Inclusivas</h3>
+          <div className="recursos-grid">
+            {recursosInclusionData.map((recurso) => (
+              <ResourceCard
+                key={recurso.id}
+                titulo={recurso.titulo}
+                descripcion={recurso.descripcion}
+                fileId={recurso.fileId}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

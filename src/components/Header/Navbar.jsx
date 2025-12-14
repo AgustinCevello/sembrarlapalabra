@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useScrollTo from '../../hooks/useScrollTo';
+import LogoImg from '../../assets/icons/ElSembradorLogo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -27,7 +28,8 @@ const Navbar = () => {
     setActiveDropdown(null);
   };
 
-  const toggleDropdown = (dropdown) => {
+  const toggleDropdown = (dropdown, e) => {
+    e.stopPropagation();
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
@@ -36,7 +38,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <img 
-            src="/src/assets/icons/ElSembradorLogo.png" 
+            src={LogoImg}
             alt="Sembrar La Palabra Logo" 
             onClick={() => handleNavClick('inicio')}
           />
@@ -55,15 +57,25 @@ const Navbar = () => {
           <li className="navbar-item navbar-dropdown">
             <button 
               className="navbar-link navbar-dropdown-toggle"
-              onClick={() => toggleDropdown('inclusion')}
+              onClick={() => handleNavClick('inclusion')}
             >
               Inclusión
-              <span className="dropdown-arrow">▼</span>
+              <span 
+                className="dropdown-arrow"
+                onClick={(e) => toggleDropdown('inclusion', e)}
+              >
+                ▼
+              </span>
             </button>
             <ul className={`navbar-submenu ${activeDropdown === 'inclusion' ? 'navbar-submenu-active' : ''}`}>
               <li>
                 <button onClick={() => handleNavClick('inclusion')}>
                   Libro EBI
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('inclusion-recursos')}>
+                  Recursos
                 </button>
               </li>
             </ul>
@@ -72,10 +84,15 @@ const Navbar = () => {
           <li className="navbar-item navbar-dropdown">
             <button 
               className="navbar-link navbar-dropdown-toggle"
-              onClick={() => toggleDropdown('ninos')}
+              onClick={() => handleNavClick('ninos-adolescentes')}
             >
               Niños y Adolescentes
-              <span className="dropdown-arrow">▼</span>
+              <span 
+                className="dropdown-arrow"
+                onClick={(e) => toggleDropdown('ninos', e)}
+              >
+                ▼
+              </span>
             </button>
             <ul className={`navbar-submenu ${activeDropdown === 'ninos' ? 'navbar-submenu-active' : ''}`}>
               <li>
@@ -90,7 +107,7 @@ const Navbar = () => {
               </li>
               <li>
                 <button onClick={() => handleNavClick('ninos-talleres')}>
-                  Talleres
+                  Talleres y Capacitaciones
                 </button>
               </li>
             </ul>
@@ -99,10 +116,15 @@ const Navbar = () => {
           <li className="navbar-item navbar-dropdown">
             <button 
               className="navbar-link navbar-dropdown-toggle"
-              onClick={() => toggleDropdown('jovenes')}
+              onClick={() => handleNavClick('jovenes')}
             >
               Jóvenes
-              <span className="dropdown-arrow">▼</span>
+              <span 
+                className="dropdown-arrow"
+                onClick={(e) => toggleDropdown('jovenes', e)}
+              >
+                ▼
+              </span>
             </button>
             <ul className={`navbar-submenu ${activeDropdown === 'jovenes' ? 'navbar-submenu-active' : ''}`}>
               <li>

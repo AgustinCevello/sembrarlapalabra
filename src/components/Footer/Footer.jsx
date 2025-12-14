@@ -1,3 +1,6 @@
+import LogoImg from '../../assets/icons/ElSembradorLogo.png';
+import InstagramIcon from '../../assets/icons/InstagramLogo.png';
+import GmailIcon from '../../assets/icons/GmailLogo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,7 +12,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section footer-logo-section">
             <img 
-              src="/src/assets/icons/ElSembradorLogo.png" 
+              src={LogoImg}
               alt="Sembrar La Palabra Logo" 
               className="footer-logo"
             />
@@ -19,32 +22,21 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h4 className="footer-title">Navegación</h4>
-            <ul className="footer-links">
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#inclusion">Inclusión</a></li>
-              <li><a href="#ninos-adolescentes">Niños y Adolescentes</a></li>
-              <li><a href="#jovenes">Jóvenes</a></li>
-              <li><a href="#libros">Libros</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
             <h4 className="footer-title">Contacto</h4>
             <ul className="footer-contact">
               <li>
-                <span>📧</span>
+                <img 
+                  src={GmailIcon}
+                  alt="Gmail"
+                  className="footer-icon"
+                />
                 <a href="mailto:sembrarlapalabra@gmail.com">
                   sembrarlapalabra@gmail.com
                 </a>
               </li>
               <li>
-                <span>🌐</span>
-                <span>sembrarlapalabra.com.ar</span>
-              </li>
-              <li>
                 <img 
-                  src="/src/assets/icons/InstagramLogo.png" 
+                  src={InstagramIcon}
                   alt="Instagram"
                   className="footer-icon"
                 />
@@ -57,15 +49,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-
-          <div className="footer-section">
-            <h4 className="footer-title">Misión</h4>
-            <p className="footer-mission">
-              Proveer herramientas para iglesias, líderes, maestros y padres, 
-              para el evangelismo y crecimiento espiritual de niños, 
-              adolescentes y jóvenes.
-            </p>
           </div>
         </div>
 

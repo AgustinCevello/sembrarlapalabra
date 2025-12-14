@@ -1,14 +1,26 @@
+// =================================================================
+// IMPORTACIÓN DE IMÁGENES
+// =================================================================
+import InstagramIcon from "../assets/icons/InstagramLogo.png";
+import GmailIcon from "../assets/icons/GmailLogo.png";
+
+// =================================================================
+// DATOS DE CONTACTO
+// =================================================================
+
 export const contactData = {
   email: "sembrarlapalabra@gmail.com",
   instagram: {
     handle: "@sembrarlapalabra",
     url: "https://www.instagram.com/sembrarlapalabra",
-    icon: "/src/assets/icons/InstagramLogo.png"
+    icon: InstagramIcon
   },
-  web: "sembrarlapalabra.com.ar",
+  gmail: {
+    icon: GmailIcon
+  },
   talleres: {
     titulo: "Solicitar Talleres Gratuitos",
-    descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ofrecemos talleres y capacitaciones sin costo para iglesias, escuelas y organizaciones. Contáctanos para coordinar.",
+    descripcion: "Escribinos para consultar disponibilidad de Talleres Gratuitos de Formación. Usá nuestros canales de contacto.",
     tipos: [
       "Taller Enseñanza Bíblica Inclusiva",
       "Capacitación para líderes",

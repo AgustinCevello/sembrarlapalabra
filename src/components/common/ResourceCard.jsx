@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from './Modal';
 import Button from './Button';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
+import DescargaIcon from '../../assets/icons/DescargaLogo.png';
 import './ResourceCard.css';
 
 const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
@@ -35,6 +36,7 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
               Ver más
             </Button>
             <Button variant="outline" onClick={handleDownload}>
+              <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
               Descargar
             </Button>
           </div>
@@ -49,6 +51,7 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
         />
         <div className="modal-actions">
           <Button variant="primary" onClick={handleDownload}>
+            <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
             Descargar PDF
           </Button>
         </div>

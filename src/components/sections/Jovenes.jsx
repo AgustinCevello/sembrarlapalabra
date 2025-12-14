@@ -4,18 +4,22 @@ import Modal from '../common/Modal';
 import Button from '../common/Button';
 import { jovenesData } from '../../data/jovenesData';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
+import DescargaIcon from '../../assets/icons/DescargaLogo.png';
 import './Jovenes.css';
 
 const Jovenes = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTema, setSelectedTema] = useState(null);
   const { versiculo, personajesBiblicos, problematicasActuales } = jovenesData;
 
-  const openProblematicasModal = () => {
+  const openProblematicaModal = (tema) => {
+    setSelectedTema(tema);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setSelectedTema(null);
   };
 
   return (
@@ -49,49 +53,59 @@ const Jovenes = () => {
 
         {/* Problemáticas Actuales */}
         <div className="jovenes-subsection problematicas-subsection" id="jovenes-problematicas">
-          <h3 className="subsection-title">Problemáticas Actuales</h3>
-          <div className="problematicas-card">
-            <div className="problematicas-content">
-              <h4>{problematicasActuales.titulo}</h4>
-              <p>{problematicasActuales.descripcion}</p>
-              <div className="problematicas-actions">
-                <Button variant="primary" onClick={openProblematicasModal}>
-                  Ver Documento
-                </Button>
-                <Button 
-                  variant="outline" 
-                  onClick={() => window.open(getDriveDownloadUrl(problematicasActuales.fileId), '_blank')}
-                >
-                  Descargar PDF
-                </Button>
+          <h3 className="subsection-title">{problematicasActuales.titulo}</h3>
+          <p className="subsection-description">{problematicasActuales.descripcion}</p>
+          
+          <div className="problematicas-grid">
+            {problematicasActuales.temas.map((tema) => (
+              <div key={tema.id} className="problematica-card">
+                <div className="problematica-icon">📚</div>
+                <h4 className="problematica-nombre">{tema.nombre}</h4>
+                <div className="problematica-actions">
+                  <Button 
+                    variant="primary" 
+                    onClick={() => openProblematicaModal(tema)}
+                  >
+                    Ver Documento
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => window.open(getDriveDownloadUrl(tema.fileId), '_blank')}
+                  >
+                    <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+                    Descargar
+                  </Button>
+                </div>
               </div>
-            </div>
-            <div className="problematicas-image">
-              <div className="problematicas-icon">📚</div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Modal Problemáticas Actuales */}
+      {/* Modal Problemáticas */}
       <Modal 
         isOpen={isModalOpen} 
         onClose={closeModal}
-        title={problematicasActuales.titulo}
+        title={selectedTema?.nombre}
       >
-        <iframe
-          src={getDrivePreviewUrl(problematicasActuales.fileId)}
-          title={problematicasActuales.titulo}
-          allow="autoplay"
-        />
-        <div className="modal-actions">
-          <Button 
-            variant="primary" 
-            onClick={() => window.open(getDriveDownloadUrl(problematicasActuales.fileId), '_blank')}
-          >
-            Descargar PDF
-          </Button>
-        </div>
+        {selectedTema && (
+          <>
+            <iframe
+              src={getDrivePreviewUrl(selectedTema.fileId)}
+              title={selectedTema.nombre}
+              allow="autoplay"
+            />
+            <div className="modal-actions">
+              <Button 
+                variant="primary" 
+                onClick={() => window.open(getDriveDownloadUrl(selectedTema.fileId), '_blank')}
+              >
+                <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+                Descargar PDF
+              </Button>
+            </div>
+          </>
+        )}
       </Modal>
     </section>
   );

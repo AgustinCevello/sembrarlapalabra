@@ -9,18 +9,13 @@ const Hero = () => {
     <section className="hero" id="inicio">
       <div className="hero-overlay"></div>
       <div className="hero-content">
-        <h1 className="hero-title">
-          Sembrar La Palabra...
-          <span className="hero-subtitle">...salió a sembrar</span>
-        </h1>
+        <h1 className="hero-title">Sembrar La Palabra</h1>
+        <p className="hero-subtitle-text">El sembrador salió a sembrar...</p>
         <p className="hero-description">
           Recursos para la enseñanza bíblica y crecimiento espiritual de niños, adolescentes y jóvenes
         </p>
         <div className="hero-buttons">
-          <Button variant="primary" onClick={() => scrollToSection('inclusion')}>
-            Explorar Recursos
-          </Button>
-          <Button variant="outline" onClick={() => scrollToSection('contacto')}>
+          <Button variant="primary" onClick={() => scrollToSection('contacto')}>
             Contactar
           </Button>
         </div>

@@ -7,31 +7,52 @@ export const jovenesData = {
     {
       id: 1,
       nombre: "Uzías",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ejemplo de liderazgo joven y consagración temprana.",
+      descripcion: "Uzías enseña que buscar a Dios trae bendición, pero el orgullo y la autosuficiencia llevan a la caída; la humildad y obediencia sostienen una vida fiel.",
       fileId: "1S7p2NGGZ8nyZNvOkZeznzhlUQvHzLGuL"
     },
     {
       id: 2,
       nombre: "José",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Testimonio de integridad y fidelidad en la juventud.",
+      descripcion: "La vida de José enseña a los jóvenes fidelidad a Dios en la adversidad, dominio propio, perseverancia, perdón y confianza en la providencia divina, aun cuando los planes parecen frustrarse o injustos.",
       fileId: "1b-UVwl5MfpKfe7Dsc6mxB0G_UaJYIear"
     },
     {
       id: 3,
       nombre: "Pedro",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. De pescador a pescador de hombres, transformación juvenil.",
+      descripcion: "La vida de Pedro enseña a los jóvenes que la fe puede flaquear, el miedo puede negar a Cristo, pero el arrepentimiento sincero restaura y renueva el llamado.",
       fileId: "1xI_00YiBwzDqgfcs2HR7EZy2-qHawVoU"
     },
     {
       id: 4,
       nombre: "Daniel",
-      descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Valentía y convicción en medio de la adversidad.",
+      descripcion: "La vida de Daniel enseña a los jóvenes fidelidad a Dios en convicción y carácter, valentía para resistir presión, integridad constante y confianza en Dios aun en riesgo y persecución.",
       fileId: "1SlPJbGjVC8ZQfsiKq4jYfHZ90QUbBFp9"
     }
   ],
   problematicasActuales: {
     titulo: "Problemáticas Actuales",
-    descripcion: "Reflexión para líderes sobre los desafíos que enfrentan los jóvenes en el contexto actual.",
-    fileId: "1AquPcexrSccY_TIp8T_dqhUEpCUUBI3x"
+    descripcion: "En esta sección iremos subiendo temas de interés, necesarios y con una mirada actual y bíblica.",
+    temas: [
+      {
+        id: 1,
+        nombre: "Maternidad",
+        fileId: "1v5BE_mxrOMD_maH9cu-9Xs3O3A76qh-Y"
+      },
+      {
+        id: 2,
+        nombre: "Hiperconectividad",
+        fileId: "1tRE6vgw8G-BAjbZl_KFedh-Smvu219cH"
+      },
+      {
+        id: 3,
+        nombre: "Inteligencia Artificial",
+        fileId: "12YpnwO4bMK-P8YOqyUXeT_Bi7ZD-o3tk"
+      },
+      {
+        id: 4,
+        nombre: "ESI y Fe Cristiana",
+        fileId: "1gxbGplb33CFn8aKsBoC9O2cHnzekcdV4"
+      }
+    ]
   }
 };

@@ -1,16 +1,19 @@
-.talleres-section-main {
+/* TalleresYCapacitaciones.css */
+
+.talleres-capacitaciones-section {
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(180deg, #f0f4f0 0%, var(--background-color) 100%);
+  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
+  background: linear-gradient(180deg, #f7fd91 0%, var(--background-color) 100%);
 }
 
-.talleres-grid {
+.talleres-capacitaciones-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   margin-top: var(--spacing-lg);
 }
 
-.taller-card {
+.taller-capacitacion-card {
   background-color: var(--white);
   border-radius: 12px;
   overflow: hidden;
@@ -20,57 +23,57 @@
   flex-direction: column;
 }
 
-.taller-card:hover {
+.taller-capacitacion-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.taller-image {
+.taller-capacitacion-image {
   width: 100%;
   height: 280px;
   overflow: hidden;
   background-color: var(--light-gray);
 }
 
-.taller-image img {
+.taller-capacitacion-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
 }
 
-.taller-card:hover .taller-image img {
+.taller-capacitacion-card:hover .taller-capacitacion-image img {
   transform: scale(1.05);
 }
 
-.taller-content {
+.taller-capacitacion-content {
   padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.taller-title {
+.taller-capacitacion-title {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   color: var(--primary-color);
   margin-bottom: var(--spacing-md);
 }
 
-.taller-description {
+.taller-capacitacion-description {
   color: var(--text-color);
   line-height: 1.7;
   margin-bottom: var(--spacing-lg);
   flex: 1;
 }
 
-.taller-content .btn {
+.taller-capacitacion-content .btn {
   width: 100%;
   margin-top: auto;
 }
 
-/* Modal Solicitar Taller */
-.solicitar-taller-form {
+/* Modal */
+.solicitar-form {
   padding: var(--spacing-md) 0;
 }
 
@@ -114,7 +117,8 @@
   background-color: var(--primary-color);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(44, 95, 45, 0.3);
+  /* Sombra basada en --primary-color */
+  box-shadow: 0 4px 12px rgba(244, 42, 85, 0.3);
 }
 
 .contact-icon {
@@ -123,21 +127,23 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .talleres-section-main {
-    padding: var(--spacing-lg) var(--spacing-sm);
-  }
-
-  .talleres-grid {
+@media (max-width: 968px) {
+  .talleres-capacitaciones-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
+}
 
-  .taller-image {
+@media (max-width: 768px) {
+  .talleres-capacitaciones-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .taller-capacitacion-image {
     height: 220px;
   }
 
-  .taller-content {
+  .taller-capacitacion-content {
     padding: var(--spacing-md);
   }
 }

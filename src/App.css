@@ -1,3 +1,5 @@
+/* App.css */
+
 .App {
   min-height: 100vh;
   display: flex;
@@ -127,11 +129,11 @@ section {
   .btn {
     display: none;
   }
-  
+
   main {
     padding-top: 0;
   }
-  
+
   section {
     page-break-inside: avoid;
   }

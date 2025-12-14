@@ -1,3 +1,8 @@
+import MaternidadIcon from '../assets/icons/MaternidadLogo.png';
+import HiperconectividadIcon from '../assets/icons/HiperconectividadLogo.png';
+import AIIcon from '../assets/icons/AILogo.png';
+import ESIIcon from '../assets/icons/ESIyFeCristiana.png';
+
 export const jovenesData = {
   versiculo: {
     texto: "Ninguno tenga en poco tu juventud, sino sé ejemplo de los creyentes en palabra, conducta, amor, espíritu, fe y pureza.",
@@ -36,22 +41,26 @@ export const jovenesData = {
       {
         id: 1,
         nombre: "Maternidad",
-        fileId: "1v5BE_mxrOMD_maH9cu-9Xs3O3A76qh-Y"
+        fileId: "1v5BE_mxrOMD_maH9cu-9Xs3O3A76qh-Y",
+        icono: MaternidadIcon
       },
       {
         id: 2,
         nombre: "Hiperconectividad",
-        fileId: "1tRE6vgw8G-BAjbZl_KFedh-Smvu219cH"
+        fileId: "1tRE6vgw8G-BAjbZl_KFedh-Smvu219cH",
+        icono: HiperconectividadIcon
       },
       {
         id: 3,
         nombre: "Inteligencia Artificial",
-        fileId: "12YpnwO4bMK-P8YOqyUXeT_Bi7ZD-o3tk"
+        fileId: "12YpnwO4bMK-P8YOqyUXeT_Bi7ZD-o3tk",
+        icono: AIIcon
       },
       {
         id: 4,
         nombre: "ESI y Fe Cristiana",
-        fileId: "1gxbGplb33CFn8aKsBoC9O2cHnzekcdV4"
+        fileId: "1gxbGplb33CFn8aKsBoC9O2cHnzekcdV4",
+        icono: ESIIcon
       }
     ]
   }

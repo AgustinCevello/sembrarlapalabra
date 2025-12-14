@@ -1,6 +1,9 @@
+/* LibrosSugeridos.css */
+
 .libros-section {
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(180deg, #f0f4f0 0%, var(--background-color) 100%);
+  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
+  background: linear-gradient(180deg, #f7fd91 0%, var(--background-color) 100%);
 }
 
 .section-intro {

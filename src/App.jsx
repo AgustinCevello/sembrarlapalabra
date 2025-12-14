@@ -4,8 +4,7 @@ import Inclusion from './components/sections/Inclusion';
 import NinosAdolescentes from './components/sections/NinosAdolescentes';
 import Jovenes from './components/sections/Jovenes';
 import LibrosSugeridos from './components/sections/LibrosSugeridos';
-import Talleres from './components/sections/Talleres';
-import Capacitaciones from './components/sections/Capacitaciones';
+import TalleresYCapacitaciones from './components/sections/TalleresYCapacitaciones';
 import Contacto from './components/sections/Contacto';
 import Footer from './components/Footer/Footer';
 import './App.css';
@@ -20,8 +19,7 @@ function App() {
         <NinosAdolescentes />
         <Jovenes />
         <LibrosSugeridos />
-        <Talleres />
-        <Capacitaciones />
+        <TalleresYCapacitaciones />
         <Contacto />
       </main>
       <Footer />

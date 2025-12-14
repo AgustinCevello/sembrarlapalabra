@@ -1,5 +1,8 @@
+/* Footer.css */
+
 .footer {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e4620 100%);
+  /* Degradado: usar --primary-color (#f42a55) y --accent-color (#d09e1e) como base. Antes: #1e4620 (verde oscuro) */
+  background: linear-gradient(135deg, var(--primary-color) 0%, #d09e1e 100%);
   color: var(--white);
   padding: var(--spacing-lg) 0 var(--spacing-md);
   margin-top: var(--spacing-xl);

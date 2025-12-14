@@ -1,24 +1,26 @@
+/* styles/index.css */
+
 :root {
   /* Colores */
-  --primary-color: #2C5F2D;
-  --secondary-color: #97BC62;
-  --accent-color: #F4A261;
-  --background-color: #FAFAF9;
-  --text-color: #1F1F1F;
+  --primary-color: #f42a55; /* Rojo/Rosa fuerte (Antes: #2C5F2D) */
+  --secondary-color: #fa7a32; /* Naranja brillante (Antes: #97BC62) */
+  --accent-color: #d09e1e81; /* Ocre/Marrón (Antes: #F4A261) */
+  --background-color: #f8fd9109; /* Amarillo muy claro (Antes: #FAFAF9) */
+  --text-color: #261323; /* Casi negro/Marrón oscuro (Antes: #1F1F1F) */
   --light-gray: #E8E8E8;
   --white: #FFFFFF;
-  
+
   /* Tipografías */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
-  
+
   /* Espaciado */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 6rem;
-  
+
   /* Transiciones */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
@@ -104,7 +106,7 @@ section {
   section {
     padding: var(--spacing-md) var(--spacing-sm);
   }
-  
+
   .container {
     padding: 0 var(--spacing-sm);
   }

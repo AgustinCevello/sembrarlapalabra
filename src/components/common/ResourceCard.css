@@ -1,3 +1,5 @@
+/* ResourceCard.css */
+
 .resource-card {
   background-color: var(--white);
   border-radius: 12px;
@@ -71,7 +73,17 @@
 .btn-icon-descarga {
   width: 18px;
   height: 18px;
+  /* Este filtro hace que el ícono de descarga sea blanco para el botón primario */
   filter: brightness(0) invert(1);
+}
+
+.btn-icon-ojo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  /* ¡CORRECCIÓN CLAVE! Se asegura que no haya filtro para que React pueda cambiar el color/imagen de origen */
+  filter: none;
+  transition: all var(--transition-fast);
 }
 
 .btn-outline .btn-icon-descarga {

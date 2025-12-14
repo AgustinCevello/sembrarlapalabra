@@ -59,7 +59,9 @@ const Jovenes = () => {
           <div className="problematicas-grid">
             {problematicasActuales.temas.map((tema) => (
               <div key={tema.id} className="problematica-card">
-                <div className="problematica-icon">📚</div>
+                <div className="problematica-icon-wrapper">
+                  <img src={tema.icono} alt={tema.nombre} className="problematica-icon-img" />
+                </div>
                 <h4 className="problematica-nombre">{tema.nombre}</h4>
                 <div className="problematica-actions">
                   <Button 

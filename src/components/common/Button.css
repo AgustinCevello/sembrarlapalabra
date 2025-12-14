@@ -1,3 +1,5 @@
+/* url(Button.css) */
+
 .btn {
   font-family: var(--font-body);
   font-weight: 500;
@@ -18,9 +20,11 @@
 }
 
 .btn-primary:hover {
-  background-color: #1e4620;
+  /* Antes: #1e4620 (Verde oscuro). Nuevo: Un tono más oscuro de --primary-color (#f42a55) */
+  background-color: #e0264e;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(44, 95, 45, 0.3);
+  /* Sombra basada en --primary-color */
+  box-shadow: 0 4px 12px rgba(244, 42, 85, 0.3);
 }
 
 .btn-secondary {
@@ -29,9 +33,11 @@
 }
 
 .btn-secondary:hover {
-  background-color: #7da350;
+  /* Antes: #7da350 (Verde claro). Nuevo: Un tono más oscuro de --secondary-color (#fa7a32) */
+  background-color: #e16b2d;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(151, 188, 98, 0.3);
+  /* Sombra basada en --secondary-color */
+  box-shadow: 0 4px 12px rgba(250, 122, 50, 0.3);
 }
 
 .btn-outline {

@@ -3,10 +3,13 @@ import Modal from './Modal';
 import Button from './Button';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
 import DescargaIcon from '../../assets/icons/DescargaLogo.png';
+import OjoCerradoIcon from '../../assets/icons/OjoCerradoLogo.png';
+import OjoAbiertoIcon from '../../assets/icons/OjoAbiertoLogo.png';
 import './ResourceCard.css';
 
 const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -32,8 +35,18 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
           <h3 className="resource-card-title">{titulo}</h3>
           <p className="resource-card-description">{descripcion}</p>
           <div className="resource-card-actions">
-            <Button variant="primary" onClick={handleOpenModal}>
+            <Button 
+              variant="primary" 
+              onClick={handleOpenModal}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
               Ver más
+              <img 
+                src={isHovering ? OjoAbiertoIcon : OjoCerradoIcon} 
+                alt="Ver" 
+                className="btn-icon-ojo" 
+              />
             </Button>
             <Button variant="outline" onClick={handleDownload}>
               <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />

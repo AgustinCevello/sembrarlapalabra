@@ -1,6 +1,9 @@
+/* NinosyAdolescentes.css */
+
 .ninos-section {
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(180deg, var(--background-color) 0%, #f0f4f0 100%);
+  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
+  background: linear-gradient(180deg, var(--background-color) 0%, #f7fd91 100%);
 }
 
 .ninos-subsection {
@@ -158,7 +161,8 @@
   background-color: var(--primary-color);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(44, 95, 45, 0.3);
+  /* Sombra basada en --primary-color */
+  box-shadow: 0 4px 12px rgba(244, 42, 85, 0.3);
 }
 
 .contact-icon {

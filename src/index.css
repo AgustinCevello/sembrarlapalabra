@@ -1,11 +1,14 @@
+/* utils/index.css */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Ajustar color y fondo para usar las variables globales */
+  color: var(--text-color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,11 +18,14 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  /* Usar --secondary-color (#fa7a32) para enlaces por defecto */
+  color: var(--secondary-color);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  /* Usar --primary-color (#f42a55) para el hover del enlace */
+  color: var(--primary-color);
 }
 
 body {
@@ -42,13 +48,19 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* Fondo blanco/claro por defecto */
+  background-color: var(--white);
+  color: var(--text-color);
+  border: 1px solid var(--light-gray);
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  /* Borde de hover con --primary-color */
+  border-color: var(--primary-color);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -56,13 +68,15 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-color);
+    background-color: var(--background-color);
   }
+
   a:hover {
-    color: #747bff;
+    color: var(--primary-color);
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: var(--white);
   }
 }

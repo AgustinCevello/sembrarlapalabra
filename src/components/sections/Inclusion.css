@@ -1,3 +1,5 @@
+/* Inclusion.css */
+
 .inclusion-section {
   padding: var(--spacing-xl) var(--spacing-md);
   background-color: var(--background-color);
@@ -21,6 +23,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
+  /* Degradado: usar --secondary-color (#fa7a32) y --accent-color (#d09e1e) */
   background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
   border-radius: 2px;
 }

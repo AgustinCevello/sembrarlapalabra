@@ -1,6 +1,9 @@
+/* Contacto.css */
+
 .contacto-section {
   padding: var(--spacing-xl) var(--spacing-md);
-  background: linear-gradient(180deg, var(--background-color) 0%, #e8f0e8 100%);
+  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
+  background: linear-gradient(180deg, var(--background-color) 0%, #f7fd91 100%);
 }
 
 .contacto-content {
@@ -119,12 +122,18 @@
 
 /* Misión */
 .mision-section {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  /* Degradado: usar --primary-color (#f42a55) y --secondary-color (#fa7a32) */
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: var(--white);
   padding: var(--spacing-lg);
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(44, 95, 45, 0.2);
+  /* Sombra basada en --primary-color */
+  box-shadow: 0 8px 24px rgba(244, 42, 85, 0.2);
 }
 
 .mision-title {

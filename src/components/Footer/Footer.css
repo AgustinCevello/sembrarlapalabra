@@ -47,7 +47,7 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   margin-bottom: var(--spacing-md);
-  color: var(--accent-color);
+  color: #000000; /* También puedes usar 'black' */
 }
 
 .footer-contact {

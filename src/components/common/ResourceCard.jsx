@@ -42,11 +42,6 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
               onMouseLeave={() => setIsHovering(false)}
             >
               Ver más
-              <img 
-                src={isHovering ? OjoAbiertoIcon : OjoCerradoIcon} 
-                alt="Ver" 
-                className="btn-icon-ojo" 
-              />
             </Button>
             <Button variant="outline" onClick={handleDownload}>
               <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />

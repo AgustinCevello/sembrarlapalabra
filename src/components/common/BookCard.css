@@ -96,10 +96,7 @@
   transform: translateY(-2px);
 }
 
-.book-card-link:hover .ml-icon-large,
-.book-card-link:hover .enlace-icon {
-  filter: brightness(0) invert(1);
-}
+
 
 .ml-icon-large {
   width: 32px;

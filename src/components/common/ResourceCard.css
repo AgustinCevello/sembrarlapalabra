@@ -75,6 +75,7 @@
   height: 18px;
   /* Este filtro hace que el ícono de descarga sea blanco para el botón primario */
   filter: brightness(0) invert(1);
+  opacity: 0.8;
 }
 
 .btn-icon-ojo {
@@ -92,6 +93,7 @@
 
 .btn-outline:hover .btn-icon-descarga {
   filter: brightness(0) invert(1);
+  opacity: 0.8;
 }
 
 .modal-actions {

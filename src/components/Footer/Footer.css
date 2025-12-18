@@ -1,7 +1,5 @@
-/* Footer.css */
-
 .footer {
-  /* Degradado: usar --primary-color (#f42a55) y --accent-color (#d09e1e) como base. Antes: #1e4620 (verde oscuro) */
+  /* Degradado con los colores que te gustan */
   background: linear-gradient(135deg, var(--primary-color) 0%, #d09e1e 100%);
   color: var(--white);
   padding: var(--spacing-lg) 0 var(--spacing-md);
@@ -47,7 +45,7 @@
   font-family: var(--font-heading);
   font-size: 1.25rem;
   margin-bottom: var(--spacing-md);
-  color: #000000; /* También puedes usar 'black' */
+  color: #000000;
 }
 
 .footer-contact {
@@ -60,29 +58,71 @@
 }
 
 .footer-contact li {
+  position: relative;
+}
+
+.footer-contact-link {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-}
-
-.footer-contact a {
   color: var(--white);
   text-decoration: none;
   transition: all var(--transition-fast);
   opacity: 0.9;
-  display: inline-block;
 }
 
-.footer-contact a:hover {
+.footer-contact-link:hover {
   opacity: 1;
   color: var(--accent-color);
-  transform: translateX(5px);
 }
 
 .footer-icon {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  margin-left: 8px;
+}
+
+/* Círculo negro detrás del icono de Gmail */
+.footer-contact li:first-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all var(--transition-fast);
+}
+
+.footer-contact li:first-child:hover::before {
+  background-color: #333333;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Círculo negro detrás del icono de Instagram */
+.footer-contact li:last-child::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all var(--transition-fast);
+}
+
+.footer-contact li:last-child:hover::before {
+  background-color: #333333;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .footer-bottom {
@@ -117,9 +157,5 @@
 
   .footer-contact {
     align-items: center;
-  }
-
-  .footer-contact a:hover {
-    transform: translateX(0);
   }
 }

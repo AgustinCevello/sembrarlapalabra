@@ -25,27 +25,28 @@ const Footer = () => {
             <h4 className="footer-title">Contacto</h4>
             <ul className="footer-contact">
               <li>
-                <img 
-                  src={GmailIcon}
-                  alt="Gmail"
-                  className="footer-icon"
-                />
-                <a href="mailto:sembrarlapalabra@gmail.com">
-                  sembrarlapalabra@gmail.com
+                <a href="mailto:sembrarlapalabra@gmail.com" className="footer-contact-link">
+                  <img 
+                    src={GmailIcon}
+                    alt="Gmail"
+                    className="footer-icon"
+                  />
+                  <span>sembrarlapalabra@gmail.com</span>
                 </a>
               </li>
               <li>
-                <img 
-                  src={InstagramIcon}
-                  alt="Instagram"
-                  className="footer-icon"
-                />
                 <a 
                   href="https://www.instagram.com/sembrarlapalabra" 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  className="footer-contact-link"
                 >
-                  @sembrarlapalabra
+                  <img 
+                    src={InstagramIcon}
+                    alt="Instagram"
+                    className="footer-icon"
+                  />
+                  <span>@sembrarlapalabra</span>
                 </a>
               </li>
             </ul>

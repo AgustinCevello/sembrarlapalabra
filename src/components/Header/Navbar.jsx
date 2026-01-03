@@ -106,7 +106,7 @@ const Navbar = () => {
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavClick('ninos-talleres')}>
+                <button onClick={() => handleNavClick('talleres')}>
                   Talleres y Capacitaciones
                 </button>
               </li>

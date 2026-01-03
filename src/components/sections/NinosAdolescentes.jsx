@@ -1,7 +1,6 @@
 import ResourceCard from '../common/ResourceCard';
 import BookCard from '../common/BookCard';
 import { ninosData } from '../../data/ninosData';
-import { recursosInclusionData } from '../../data/inclusionData';
 import './NinosAdolescentes.css';
 
 const NinosAdolescentes = () => {
@@ -9,21 +8,6 @@ const NinosAdolescentes = () => {
     <section className="ninos-section" id="ninos-adolescentes">
       <div className="container">
         <h2 className="section-title">Niños y Adolescentes</h2>
-
-        {/* Recursos */}
-        <div className="ninos-subsection" id="ninos-recursos">
-          <h3 className="subsection-title">Recursos para Clases Bíblicas Inclusivas</h3>
-          <div className="recursos-grid">
-            {recursosInclusionData.map((recurso) => (
-              <ResourceCard
-                key={recurso.id}
-                titulo={recurso.titulo}
-                descripcion={recurso.descripcion}
-                fileId={recurso.fileId}
-              />
-            ))}
-          </div>
-        </div>
 
         {/* Libros */}
         <div className="ninos-subsection" id="ninos-libros">

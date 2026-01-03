@@ -41,7 +41,7 @@ export const jovenesData = {
       {
         id: 1,
         nombre: "Maternidad",
-        fileId: "1v5BE_mxrOMD_maH9cu-9Xs3O3A76qh-Y",
+        fileId: "12YpnwO4bMK-P8YOqyUXeT_Bi7ZD-o3tk",
         icono: MaternidadIcon
       },
       {
@@ -53,7 +53,7 @@ export const jovenesData = {
       {
         id: 3,
         nombre: "Inteligencia Artificial",
-        fileId: "12YpnwO4bMK-P8YOqyUXeT_Bi7ZD-o3tk",
+        fileId: "1v5BE_mxrOMD_maH9cu-9Xs3O3A76qh-Y",
         icono: AIIcon
       },
       {

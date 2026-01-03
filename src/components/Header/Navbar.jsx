@@ -96,11 +96,6 @@ const Navbar = () => {
             </button>
             <ul className={`navbar-submenu ${activeDropdown === 'ninos' ? 'navbar-submenu-active' : ''}`}>
               <li>
-                <button onClick={() => handleNavClick('ninos-recursos')}>
-                  Recursos
-                </button>
-              </li>
-              <li>
                 <button onClick={() => handleNavClick('ninos-libros')}>
                   Libros
                 </button>

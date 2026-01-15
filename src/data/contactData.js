@@ -19,8 +19,8 @@ export const contactData = {
     icon: GmailIcon
   },
   talleres: {
-    titulo: "Solicitar Talleres Gratuitos",
-    descripcion: "Escribinos para consultar disponibilidad de Talleres Gratuitos de Formación. Usá nuestros canales de contacto.",
+    titulo: "Solicitar Talleres",
+    descripcion: "Escribinos para consultar disponibilidad de Talleres de Formación. Usá nuestros canales de contacto.",
     tipos: [
       "Taller Enseñanza Bíblica Inclusiva",
       "Capacitación para líderes",

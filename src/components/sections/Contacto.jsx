@@ -48,7 +48,7 @@ const Contacto = () => {
             </div>
           </div>
 
-          {/* Talleres Gratuitos */}
+          {/* Talleres */}
           <div className="talleres-info-card">
             <h3 className="talleres-info-title">{contactData.talleres.titulo}</h3>
             <p className="talleres-info-description">{contactData.talleres.descripcion}</p>

@@ -25,7 +25,7 @@ const TalleresYCapacitaciones = () => {
       <div className="container">
         <h2 className="section-title">Talleres y Capacitaciones</h2>
         <p className="section-intro">
-          Ofrecemos talleres gratuitos para iglesias, escuelas y organizaciones. Contáctanos para coordinar una capacitación en tu comunidad.
+          Ofrecemos talleres para iglesias, escuelas y organizaciones. Contáctanos para coordinar una capacitación en tu comunidad.
         </p>
 
         <div className="talleres-capacitaciones-grid">

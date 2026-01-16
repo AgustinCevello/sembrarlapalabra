@@ -1,11 +1,4 @@
-// =================================================================
-// IMPORTACIÓN DE IMÁGENES
-// =================================================================
 import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.png";
-
-// =================================================================
-// DATOS DE INCLUSIÓN
-// =================================================================
 
 export const inclusionData = {
   libro: {
@@ -48,6 +41,13 @@ export const recursosInclusionData = [
     titulo: "Links Útiles",
     descripcion: "Plataforma de referencia en comunicación aumentativa y alternativa. Herramienta para traducir textos a pictogramas. Recursos para educación inclusiva. Sitio educativo orientado a necesidades especiales.",
     fileId: "17pDHjE5LJcIPZcT85pyWP6sAnbMqQ0tV",
+    categoria: "recurso"
+  },
+    {
+    id: 5,
+    titulo: "Ejemplo de Programa para Escuela Bíblica",
+    descripcion: "Un programa ideal es aquel que puede adaptarse a las necesidades y realidades de los chicos, los recursos existentes y que se planifica intencional y progresivamente y se va evaluando y adaptando. Puede haber muchos tipos de programas, aquí va uno a modo de ejemplo.",
+    fileId: "1wpfQOlkKpOgmwX38baxh0LmoxKLGd4z1",
     categoria: "recurso"
   }
 ];

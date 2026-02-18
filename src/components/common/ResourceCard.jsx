@@ -3,24 +3,22 @@ import Modal from './Modal';
 import Button from './Button';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
 import DescargaIcon from '../../assets/icons/DescargaLogo.png';
-import OjoCerradoIcon from '../../assets/icons/OjoCerradoLogo.png';
-import OjoAbiertoIcon from '../../assets/icons/OjoAbiertoLogo.png';
 import './ResourceCard.css';
 
-const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
+const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isHovering, setIsHovering] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  // Si tiene múltiples archivos, el seleccionado empieza en el primero
+  const tieneMultiples = archivos && archivos.length > 0;
+  const [archivoSeleccionado, setArchivoSeleccionado] = useState(
+    tieneMultiples ? archivos[0] : null
+  );
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // El fileId activo es el del archivo seleccionado, o el prop simple
+  const activeFileId = tieneMultiples ? archivoSeleccionado.fileId : fileId;
 
   const handleDownload = () => {
-    window.open(getDriveDownloadUrl(fileId), '_blank');
+    window.open(getDriveDownloadUrl(activeFileId), '_blank');
   };
 
   return (
@@ -34,13 +32,24 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
         <div className="resource-card-content">
           <h3 className="resource-card-title">{titulo}</h3>
           <p className="resource-card-description">{descripcion}</p>
+
+          {/* Selector de grupo de edad (solo si hay múltiples archivos) */}
+          {tieneMultiples && (
+            <div className="resource-card-selector">
+              {archivos.map((archivo) => (
+                <button
+                  key={archivo.fileId}
+                  className={`selector-btn ${archivoSeleccionado.fileId === archivo.fileId ? 'selector-btn--active' : ''}`}
+                  onClick={() => setArchivoSeleccionado(archivo)}
+                >
+                  {archivo.label}
+                </button>
+              ))}
+            </div>
+          )}
+
           <div className="resource-card-actions">
-            <Button 
-              variant="primary" 
-              onClick={handleOpenModal}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
+            <Button variant="primary" onClick={() => setIsModalOpen(true)}>
               Ver más
             </Button>
             <Button variant="outline" onClick={handleDownload}>
@@ -51,10 +60,26 @@ const ResourceCard = ({ titulo, descripcion, fileId, imagen }) => {
         </div>
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={titulo}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={titulo}>
+
+        {/* Si tiene múltiples, mostrar selector también dentro del modal */}
+        {tieneMultiples && (
+          <div className="resource-card-selector resource-card-selector--modal">
+            {archivos.map((archivo) => (
+              <button
+                key={archivo.fileId}
+                className={`selector-btn ${archivoSeleccionado.fileId === archivo.fileId ? 'selector-btn--active' : ''}`}
+                onClick={() => setArchivoSeleccionado(archivo)}
+              >
+                {archivo.label}
+              </button>
+            ))}
+          </div>
+        )}
+
         <iframe
-          src={getDrivePreviewUrl(fileId)}
-          title={titulo}
+          src={getDrivePreviewUrl(activeFileId)}
+          title={tieneMultiples ? archivoSeleccionado.label : titulo}
           allow="autoplay"
         />
         <div className="modal-actions">

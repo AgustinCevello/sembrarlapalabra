@@ -64,6 +64,7 @@ const Inclusion = () => {
                 titulo={recurso.titulo}
                 descripcion={recurso.descripcion}
                 fileId={recurso.fileId}
+                archivos={recurso.archivos}
               />
             ))}
           </div>

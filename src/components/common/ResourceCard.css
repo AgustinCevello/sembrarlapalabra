@@ -55,6 +55,42 @@
   line-height: 1.6;
 }
 
+/* ── Selector de grupo de edad ── */
+.resource-card-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.selector-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.selector-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.selector-btn--active {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.resource-card-selector--modal {
+  margin-bottom: var(--spacing-md);
+  justify-content: center;
+}
+/* ─────────────────────────────── */
+
 .resource-card-actions {
   display: flex;
   gap: var(--spacing-sm);
@@ -73,7 +109,6 @@
 .btn-icon-descarga {
   width: 18px;
   height: 18px;
-  /* Este filtro hace que el ícono de descarga sea blanco para el botón primario */
   filter: brightness(0) invert(1);
   opacity: 0.8;
 }
@@ -82,7 +117,6 @@
   width: 20px;
   height: 20px;
   object-fit: contain;
-  /* ¡CORRECCIÓN CLAVE! Se asegura que no haya filtro para que React pueda cambiar el color/imagen de origen */
   filter: none;
   transition: all var(--transition-fast);
 }
@@ -127,5 +161,10 @@
 
   .resource-card-actions .btn {
     width: 100%;
+  }
+
+  .selector-btn {
+    font-size: 0.78rem;
+    padding: 4px 10px;
   }
 }

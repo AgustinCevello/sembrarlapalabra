@@ -50,6 +50,12 @@ const Inclusion = () => {
                 />
                 Comprar
               </Button>
+              <Button 
+                variant="secondary"
+                onClick={() => window.open('https://www.instagram.com/reel/DUqGJxVEZqJ/?igsh=MTZiMTJoYXRsM2h6eQ%3D%3D', '_blank')}
+              >
+                Ver entrevista
+              </Button>
             </div>
           </div>
         </div>

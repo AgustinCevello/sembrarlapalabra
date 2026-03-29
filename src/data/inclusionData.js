@@ -54,5 +54,19 @@ export const recursosInclusionData = [
       { label: "Preadolescentes",  fileId: "1ryxSlDCN0RqdUTdHnz_XwMugk-J7Wq76" }
     ],
     categoria: "recurso"
+  },
+  {
+    id: 6,
+    titulo: 'Visuales para "La Creación"',
+    descripcion: 'Génesis 1:1-2:3. Visuales para clases con y sin niños con TEA/TDAH. Visuales para colorear o crear rompecabezas o ilustrar los 7 días de la Creación. Dinámica "encontrar las diferencias".',
+    archivos: [
+      { label: "La Creación visual limpia", fileId: "1V5Cwdv_Ao_8LDIXNu7zU9ja2JrSRYbld" },
+      { label: "Las 4 diferencias",         fileId: "17A99ACmUVpCNQ-DXMkXcWgIMa60gi7oQ" },
+      { label: "La Creación",               fileId: "1BKepS8Ufp8ixRuPfyEmL_C6cuARTnr0c" },
+      { label: "Las 10 diferencias",        fileId: "1vCQV2FVPDTc67PB9QUMN7ggG3K1eelA4" },
+      { label: "Imágen cargada VS limpia",  fileId: "1c5ltRbFdZpEOW6zlyMDbRZWb8j5Waxb7" },
+      { label: "Ilustración color peques",  fileId: "13mPGbN9_3IKGp8-VMPxxrqETkTCalmD7" }
+    ],
+    categoria: "recurso"
   }
 ];

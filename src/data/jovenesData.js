@@ -1,3 +1,4 @@
+import { HiOutlineDocumentCheck } from 'react-icons/hi2';
 import MaternidadIcon from '../assets/icons/MaternidadLogo.webp';
 import HiperconectividadIcon from '../assets/icons/HiperconectividadLogo.webp';
 import AIIcon from '../assets/icons/AILogo.webp';
@@ -52,7 +53,7 @@ export const jovenesData = {
         id: 5,
         nombre: "Protocolo para iglesias. Prevención e intervención: Abuso sexual infantil",
         fileId: "1nvJEwhd4VEQHUK080pDXgzbhWO8aBgee",
-        icono: ProtocoloAbusoIcon
+        icono: HiOutlineDocumentCheck
       },
       {
         id: 1,

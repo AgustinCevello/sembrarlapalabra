@@ -61,7 +61,11 @@ const Jovenes = () => {
             {problematicasActuales.temas.map((tema) => (
               <div key={tema.id} className="problematica-card">
                 <div className="problematica-icon-wrapper">
-                  <img src={tema.icono} alt={tema.nombre} className="problematica-icon-img" />
+                  {typeof tema.icono === 'string' ? (
+                    <img src={tema.icono} alt={tema.nombre} className="problematica-icon-img" />
+                  ) : (
+                    <tema.icono className="problematica-icon-img" style={{ color: 'black' }} />
+                  )}
                 </div>
                 <h4 className="problematica-nombre">{tema.nombre}</h4>
                 <div className="problematica-actions">

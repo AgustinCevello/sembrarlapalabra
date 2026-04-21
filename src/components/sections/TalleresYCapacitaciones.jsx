@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Button from '../common/Button';
 import Modal from '../common/Modal';
 import { ninosData } from '../../data/ninosData';
-import InstagramIcon from '../../assets/icons/InstagramLogo.png';
-import GmailIcon from '../../assets/icons/GmailLogo.png';
+import InstagramIcon from '../../assets/icons/InstagramLogo.webp';
+import GmailIcon from '../../assets/icons/GmailLogo.webp';
 import './TalleresYCapacitaciones.css';
 
 const TalleresYCapacitaciones = () => {

@@ -4,7 +4,7 @@ import Modal from '../common/Modal';
 import Button from '../common/Button';
 import { jovenesData } from '../../data/jovenesData';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
-import DescargaIcon from '../../assets/icons/DescargaLogo.png';
+import DescargaIcon from '../../assets/icons/DescargaLogo.webp';
 import './Jovenes.css';
 
 const Jovenes = () => {
@@ -33,9 +33,9 @@ const Jovenes = () => {
           <p className="versiculo-referencia">- {versiculo.referencia}</p>
         </div>
 
-        {/* Personajes Bíblicos */}
+        {/* Clases para Jóvenes */}
         <div className="jovenes-subsection" id="jovenes-personajes">
-          <h3 className="subsection-title">Ejemplos de Personajes Bíblicos</h3>
+          <h3 className="subsection-title">Clases para Jóvenes</h3>
           <p className="subsection-description">
             Recursos para trabajar con jóvenes a través de ejemplos bíblicos inspiradores.
           </p>
@@ -46,6 +46,7 @@ const Jovenes = () => {
                 titulo={personaje.nombre}
                 descripcion={personaje.descripcion}
                 fileId={personaje.fileId}
+                archivos={personaje.archivos}
               />
             ))}
           </div>

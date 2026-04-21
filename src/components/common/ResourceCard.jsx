@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Modal from './Modal';
 import Button from './Button';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
-import DescargaIcon from '../../assets/icons/DescargaLogo.png';
+import DescargaIcon from '../../assets/icons/DescargaLogo.webp';
 import './ResourceCard.css';
 
 const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen }) => {

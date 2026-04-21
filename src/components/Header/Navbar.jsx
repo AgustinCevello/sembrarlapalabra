@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import useScrollTo from '../../hooks/useScrollTo';
-import LogoImg from '../../assets/icons/ElSembradorLogo.png';
+import LogoImg from '../../assets/icons/ElSembradorLogo.webp';
 import './Navbar.css';
 
 const Navbar = () => {

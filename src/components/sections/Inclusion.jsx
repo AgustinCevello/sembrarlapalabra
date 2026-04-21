@@ -1,8 +1,8 @@
 import ResourceCard from '../common/ResourceCard';
 import Button from '../common/Button';
 import { inclusionData, recursosInclusionData } from '../../data/inclusionData';
-import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.png';
-import DescargaIcon from '../../assets/icons/DescargaLogo.png';
+import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.webp';
+import DescargaIcon from '../../assets/icons/DescargaLogo.webp';
 import { getDrivePreviewUrl } from '../../utils/driveHelpers';
 import './Inclusion.css';
 

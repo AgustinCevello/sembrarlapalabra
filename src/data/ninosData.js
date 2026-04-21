@@ -1,10 +1,10 @@
 // =================================================================
 // IMPORTACIÓN DE IMÁGENES
 // =================================================================
-import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.png";
-import TapaTeologiaSistematicaImg from "../assets/images/TapasDeLibros/TapaTeologiaSistematica.png";
-import FotoLas3Img from "../assets/images/Variado/FotoLas3.png";
-import FotoMiaImg from "../assets/images/Variado/FotoMia.png";
+import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.webp";
+import TapaTeologiaSistematicaImg from "../assets/images/TapasDeLibros/TapaTeologiaSistematica.webp";
+import FotoLas3Img from "../assets/images/Variado/FotoLas3.webp";
+import FotoMiaImg from "../assets/images/Variado/FotoMia.webp";
 
 // =================================================================
 // DATOS DE NIÑOS Y ADOLESCENTES

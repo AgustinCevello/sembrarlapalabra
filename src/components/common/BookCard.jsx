@@ -1,4 +1,4 @@
-import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.png';
+import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.webp';
 import './BookCard.css';
 
 const BookCard = ({ titulo, autor, tapa, descripcion, mercadoLibreUrl, enlaceExterno }) => {

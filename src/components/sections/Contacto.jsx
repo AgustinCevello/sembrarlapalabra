@@ -1,6 +1,6 @@
 import { contactData } from '../../data/contactData';
-import InstagramIcon from '../../assets/icons/InstagramLogo.png';
-import GmailIcon from '../../assets/icons/GmailLogo.png';
+import InstagramIcon from '../../assets/icons/InstagramLogo.webp';
+import GmailIcon from '../../assets/icons/GmailLogo.webp';
 import './Contacto.css';
 
 const Contacto = () => {

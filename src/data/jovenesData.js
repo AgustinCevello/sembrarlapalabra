@@ -1,7 +1,8 @@
-import MaternidadIcon from '../assets/icons/MaternidadLogo.png';
-import HiperconectividadIcon from '../assets/icons/HiperconectividadLogo.png';
-import AIIcon from '../assets/icons/AILogo.png';
-import ESIIcon from '../assets/icons/ESIyFeCristiana.png';
+import MaternidadIcon from '../assets/icons/MaternidadLogo.webp';
+import HiperconectividadIcon from '../assets/icons/HiperconectividadLogo.webp';
+import AIIcon from '../assets/icons/AILogo.webp';
+import ESIIcon from '../assets/icons/ESIyFeCristiana.webp';
+import ProtocoloAbusoIcon from '../assets/icons/ProtocoloAbusoLogo.webp';
 
 export const jovenesData = {
   versiculo: {
@@ -9,6 +10,15 @@ export const jovenesData = {
     referencia: "1 Timoteo 4:12"
   },
   personajesBiblicos: [
+    {
+      id: 5,
+      nombre: "Santidad",
+      descripcion: "Clases para Jóvenes sobre la Santidad.",
+      archivos: [
+        { label: "Clase 1", fileId: "1Mothv-so7Uc1eKRq92UzQLo8Bwo4aDuo" },
+        { label: "Clase 2 y 3", fileId: "1ptuxPdulAaCY_pcYiD7yOjnht1WTnZqS" }
+      ]
+    },
     {
       id: 1,
       nombre: "Uzías",
@@ -38,6 +48,12 @@ export const jovenesData = {
     titulo: "Problemáticas Actuales",
     descripcion: "En esta sección iremos subiendo temas de interés, necesarios y con una mirada actual y bíblica.",
     temas: [
+      {
+        id: 5,
+        nombre: "Protocolo para iglesias. Prevención e intervención: Abuso sexual infantil",
+        fileId: "1nvJEwhd4VEQHUK080pDXgzbhWO8aBgee",
+        icono: ProtocoloAbusoIcon
+      },
       {
         id: 1,
         nombre: "Maternidad",

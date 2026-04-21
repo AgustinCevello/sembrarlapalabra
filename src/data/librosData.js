@@ -3,24 +3,24 @@
 // =================================================================
 
 // Libros Destacados
-import TapaBibliaImg from "../assets/images/TapasDeLibros/TapaBiblia.png";
-import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.png";
-import TapaTeologiaSistematicaImg from "../assets/images/TapasDeLibros/TapaTeologiaSistematica.png";
-import TapaCatequesisInclusivaImg from "../assets/images/TapasDeLibros/TapaCatequesisInclusiva.png";
+import TapaBibliaImg from "../assets/images/TapasDeLibros/TapaBiblia.webp";
+import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.webp";
+import TapaTeologiaSistematicaImg from "../assets/images/TapasDeLibros/TapaTeologiaSistematica.webp";
+import TapaCatequesisInclusivaImg from "../assets/images/TapasDeLibros/TapaCatequesisInclusiva.webp";
 
 // Otros Libros
-import TapaNoDejesTuCerebroImg from "../assets/images/TapasDeLibros/TapaNoDejesTuCerebroEnLaPpuerta.png";
-import TapaComoDesarrollarElTemperamentoImg from "../assets/images/TapasDeLibros/TapaComoDesarrollarElTemperamentoDeSuHijo.png";
-import TapaComoCriarVaronesImg from "../assets/images/TapasDeLibros/TapaComoCriarALosVarones.png";
-import TapaComoCriarHijasImg from "../assets/images/TapasDeLibros/TapaComoCriarALasHijas.png";
-import TapaCuentosQueNoSonCuentosImg from "../assets/images/TapasDeLibros/TapaCuentosQueNoSonCuentos.png";
-import TapaLos5LenguajesDelAmorImg from "../assets/images/TapasDeLibros/TapaLos5lenguajesDelAmorDeLosNiños.png";
-import TapaLaVerdadDesnudaImg from "../assets/images/TapasDeLibros/TapaLaVerdadDesnuda.png";
-import TapaLiderazgoGeneracionalImg from "../assets/images/TapasDeLibros/TapaLiderazgoGeneracional.png";
-import TapaDistraidosYBrillantesImg from "../assets/images/TapasDeLibros/TapaDistraidosYBrillantes.png";
+import TapaNoDejesTuCerebroImg from "../assets/images/TapasDeLibros/TapaNoDejesTuCerebroEnLaPpuerta.webp";
+import TapaComoDesarrollarElTemperamentoImg from "../assets/images/TapasDeLibros/TapaComoDesarrollarElTemperamentoDeSuHijo.webp";
+import TapaComoCriarVaronesImg from "../assets/images/TapasDeLibros/TapaComoCriarALosVarones.webp";
+import TapaComoCriarHijasImg from "../assets/images/TapasDeLibros/TapaComoCriarALasHijas.webp";
+import TapaCuentosQueNoSonCuentosImg from "../assets/images/TapasDeLibros/TapaCuentosQueNoSonCuentos.webp";
+import TapaLos5LenguajesDelAmorImg from "../assets/images/TapasDeLibros/TapaLos5lenguajesDelAmorDeLosNiños.webp";
+import TapaLaVerdadDesnudaImg from "../assets/images/TapasDeLibros/TapaLaVerdadDesnuda.webp";
+import TapaLiderazgoGeneracionalImg from "../assets/images/TapasDeLibros/TapaLiderazgoGeneracional.webp";
+import TapaDistraidosYBrillantesImg from "../assets/images/TapasDeLibros/TapaDistraidosYBrillantes.webp";
 
 // Iconos
-import EnlaceIcon from "../assets/icons/Enlace.png";
+import EnlaceIcon from "../assets/icons/Enlace.webp";
 
 // =================================================================
 // CONSTANTES DE LIBROS

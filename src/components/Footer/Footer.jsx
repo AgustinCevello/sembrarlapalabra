@@ -1,6 +1,6 @@
-import LogoImg from '../../assets/icons/ElSembradorLogo.png';
-import InstagramIcon from '../../assets/icons/InstagramLogo.png';
-import GmailIcon from '../../assets/icons/GmailLogo.png';
+import LogoImg from '../../assets/icons/ElSembradorLogo.webp';
+import InstagramIcon from '../../assets/icons/InstagramLogo.webp';
+import GmailIcon from '../../assets/icons/GmailLogo.webp';
 import './Footer.css';
 
 const Footer = () => {

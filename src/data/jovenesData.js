@@ -1,4 +1,4 @@
-import { HiOutlineDocumentCheck } from 'react-icons/hi2';
+import { HiOutlineDocumentCheck, HiOutlineHeart } from 'react-icons/hi2';
 import MaternidadIcon from '../assets/icons/MaternidadLogo.webp';
 import HiperconectividadIcon from '../assets/icons/HiperconectividadLogo.webp';
 import AIIcon from '../assets/icons/AILogo.webp';
@@ -49,6 +49,12 @@ export const jovenesData = {
     titulo: "Problemáticas Actuales",
     descripcion: "En esta sección iremos subiendo temas de interés, necesarios y con una mirada actual y bíblica.",
     temas: [
+      {
+        id: 6,
+        nombre: "Recursos para prevención de abuso sexual infantil",
+        fileId: "1x5fH199WaHLWjzmaee9m0b5Larf78-Tp",
+        icono: HiOutlineHeart
+      },
       {
         id: 5,
         nombre: "Protocolo para iglesias. Prevención e intervención: Abuso sexual infantil",

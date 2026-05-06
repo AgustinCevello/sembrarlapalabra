@@ -7,15 +7,47 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeSection, setActiveSection] = useState('inicio');
   const scrollToSection = useScrollTo();
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 50);
+      
+      if (isMenuOpen && Math.abs(currentScrollY - lastScrollY) > 50) {
+        setIsMenuOpen(false);
+        setActiveDropdown(null);
+      }
+      
+      if (!isMenuOpen) {
+        lastScrollY = currentScrollY;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const sections = ['inicio', 'inclusion', 'ninos-adolescentes', 'jovenes', 'libros', 'contacto'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, {
+      rootMargin: '-30% 0px -70% 0px'
+    });
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleMenu = () => {
@@ -47,7 +79,7 @@ const Navbar = () => {
         <ul className={`navbar-menu ${isMenuOpen ? 'navbar-menu-active' : ''}`}>
           <li className="navbar-item">
             <button 
-              className="navbar-link" 
+              className={`navbar-link ${activeSection === 'inicio' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('inicio')}
             >
               Inicio
@@ -56,7 +88,7 @@ const Navbar = () => {
 
           <li className="navbar-item navbar-dropdown">
             <button 
-              className="navbar-link navbar-dropdown-toggle"
+              className={`navbar-link navbar-dropdown-toggle ${activeSection === 'inclusion' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('inclusion')}
             >
               Inclusión
@@ -83,7 +115,7 @@ const Navbar = () => {
 
           <li className="navbar-item navbar-dropdown">
             <button 
-              className="navbar-link navbar-dropdown-toggle"
+              className={`navbar-link navbar-dropdown-toggle ${activeSection === 'ninos-adolescentes' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('ninos-adolescentes')}
             >
               Niños y Adolescentes
@@ -110,7 +142,7 @@ const Navbar = () => {
 
           <li className="navbar-item navbar-dropdown">
             <button 
-              className="navbar-link navbar-dropdown-toggle"
+              className={`navbar-link navbar-dropdown-toggle ${activeSection === 'jovenes' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('jovenes')}
             >
               Jóvenes
@@ -137,7 +169,7 @@ const Navbar = () => {
 
           <li className="navbar-item">
             <button 
-              className="navbar-link" 
+              className={`navbar-link ${activeSection === 'libros' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('libros')}
             >
               Libros
@@ -146,7 +178,7 @@ const Navbar = () => {
 
           <li className="navbar-item">
             <button 
-              className="navbar-link" 
+              className={`navbar-link ${activeSection === 'contacto' ? 'navbar-link-active' : ''}`}
               onClick={() => handleNavClick('contacto')}
             >
               Contacto
@@ -164,6 +196,16 @@ const Navbar = () => {
           <span></span>
         </button>
       </div>
+
+      {isMenuOpen && (
+        <div 
+          className="navbar-overlay" 
+          onClick={() => {
+            setIsMenuOpen(false);
+            setActiveDropdown(null);
+          }}
+        />
+      )}
     </nav>
   );
 };

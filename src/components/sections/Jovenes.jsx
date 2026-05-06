@@ -94,24 +94,24 @@ const Jovenes = () => {
         isOpen={isModalOpen} 
         onClose={closeModal}
         title={selectedTema?.nombre}
+        footer={
+          selectedTema && (
+            <Button 
+              variant="primary" 
+              onClick={() => window.open(getDriveDownloadUrl(selectedTema.fileId), '_blank')}
+            >
+              <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+              Descargar PDF
+            </Button>
+          )
+        }
       >
         {selectedTema && (
-          <>
-            <iframe
-              src={getDrivePreviewUrl(selectedTema.fileId)}
-              title={selectedTema.nombre}
-              allow="autoplay"
-            />
-            <div className="modal-actions">
-              <Button 
-                variant="primary" 
-                onClick={() => window.open(getDriveDownloadUrl(selectedTema.fileId), '_blank')}
-              >
-                <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
-                Descargar PDF
-              </Button>
-            </div>
-          </>
+          <iframe
+            src={getDrivePreviewUrl(selectedTema.fileId)}
+            title={selectedTema.nombre}
+            allow="autoplay"
+          />
         )}
       </Modal>
     </section>

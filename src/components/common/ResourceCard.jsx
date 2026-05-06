@@ -60,7 +60,17 @@ const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen }) => {
         </div>
       </div>
 
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={titulo}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={titulo}
+        footer={
+          <Button variant="primary" onClick={handleDownload}>
+            <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+            Descargar PDF
+          </Button>
+        }
+      >
 
         {/* Si tiene múltiples, mostrar selector también dentro del modal */}
         {tieneMultiples && (
@@ -82,12 +92,6 @@ const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen }) => {
           title={tieneMultiples ? archivoSeleccionado.label : titulo}
           allow="autoplay"
         />
-        <div className="modal-actions">
-          <Button variant="primary" onClick={handleDownload}>
-            <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
-            Descargar PDF
-          </Button>
-        </div>
       </Modal>
     </>
   );

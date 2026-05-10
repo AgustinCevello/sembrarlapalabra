@@ -43,6 +43,12 @@ export const jovenesData = {
       nombre: "Daniel",
       descripcion: "La vida de Daniel enseña a los jóvenes fidelidad a Dios en convicción y carácter, valentía para resistir presión, integridad constante y confianza en Dios aun en riesgo y persecución.",
       fileId: "1SlPJbGjVC8ZQfsiKq4jYfHZ90QUbBFp9"
+    },
+    {
+      id: 6,
+      nombre: "Nuestra vida en Redes (Fachada digital)",
+      descripcion: "¿Vives o Publicas? Desmascarando la mentira de las redes sociales.\nMás allá del \"Like\": Encontrando nuestra identidad fuera de la pantalla.",
+      fileId: "1wy-mBpUDbYl-UsM5afKSjQPLwymeVfuj"
     }
   ],
   problematicasActuales: {

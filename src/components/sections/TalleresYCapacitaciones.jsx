@@ -20,52 +20,47 @@ const TalleresYCapacitaciones = () => {
     setModalContent(null);
   };
 
+  const renderCard = (item) => (
+    <div key={item.id} className="taller-capacitacion-card">
+      <div className="taller-capacitacion-image">
+        <img src={item.foto} alt={item.titulo} />
+      </div>
+      <div className="taller-capacitacion-content">
+        <h3 className="taller-capacitacion-title">{item.titulo}</h3>
+        <p className="taller-capacitacion-description">{item.descripcion}</p>
+        <div className="taller-capacitacion-buttons">
+          {item.propuestaUrl && (
+            <a
+              href={item.propuestaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
+              {item.propuestaLabel || "Propuesta de Taller"}
+            </a>
+          )}
+          <Button 
+            variant="primary" 
+            onClick={() => openModal(item)}
+          >
+            Solicitar Taller
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section className="talleres-capacitaciones-section" id="talleres">
       <div className="container">
         <h2 className="section-title">Talleres y Capacitaciones</h2>
-        <p className="section-intro">
-          Ofrecemos talleres para iglesias, escuelas y organizaciones. Contáctanos para coordinar una capacitación en tu comunidad.
-        </p>
 
         <div className="talleres-capacitaciones-grid">
           {/* Talleres */}
-          {ninosData.talleres.map((taller) => (
-            <div key={taller.id} className="taller-capacitacion-card">
-              <div className="taller-capacitacion-image">
-                <img src={taller.foto} alt={taller.titulo} />
-              </div>
-              <div className="taller-capacitacion-content">
-                <h3 className="taller-capacitacion-title">{taller.titulo}</h3>
-                <p className="taller-capacitacion-description">{taller.descripcion}</p>
-                <Button 
-                  variant="primary" 
-                  onClick={() => openModal(taller)}
-                >
-                  Solicitar Taller
-                </Button>
-              </div>
-            </div>
-          ))}
+          {ninosData.talleres.map((taller) => renderCard(taller))}
 
           {/* Capacitaciones */}
-          {ninosData.capacitaciones.map((capacitacion) => (
-            <div key={capacitacion.id} className="taller-capacitacion-card">
-              <div className="taller-capacitacion-image">
-                <img src={capacitacion.foto} alt={capacitacion.titulo} />
-              </div>
-              <div className="taller-capacitacion-content">
-                <h3 className="taller-capacitacion-title">{capacitacion.titulo}</h3>
-                <p className="taller-capacitacion-description">{capacitacion.descripcion}</p>
-                <Button 
-                  variant="primary" 
-                  onClick={() => openModal(capacitacion)}
-                >
-                  Solicitar Taller
-                </Button>
-              </div>
-            </div>
-          ))}
+          {ninosData.capacitaciones.map((capacitacion) => renderCard(capacitacion))}
         </div>
       </div>
 

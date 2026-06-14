@@ -67,9 +67,17 @@
   flex: 1;
 }
 
-.taller-capacitacion-content .btn {
-  width: 100%;
+.taller-capacitacion-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
   margin-top: auto;
+}
+
+.taller-capacitacion-buttons .btn {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 /* Modal */
@@ -145,5 +153,9 @@
 
   .taller-capacitacion-content {
     padding: var(--spacing-md);
+  }
+
+  .taller-capacitacion-buttons {
+    flex-direction: column;
   }
 }

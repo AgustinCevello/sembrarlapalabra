@@ -20,9 +20,8 @@
 }
 
 .navbar-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  max-width: 100%;
+  padding: 1rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -194,6 +193,10 @@
 
 /* Responsive */
 @media (max-width: 968px) {
+  .navbar-container {
+    padding: 1rem 2rem;
+  }
+
   .navbar-hamburger {
     display: flex;
   }

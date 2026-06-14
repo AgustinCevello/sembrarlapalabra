@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    const sections = ['inicio', 'inclusion', 'ninos-adolescentes', 'jovenes', 'libros', 'contacto'];
+    const sections = ['inicio', 'inclusion', 'ninos-adolescentes', 'jovenes', 'libros', 'talleres', 'contacto'];
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -132,12 +132,16 @@ const Navbar = () => {
                   Libros
                 </button>
               </li>
-              <li>
-                <button onClick={() => handleNavClick('talleres')}>
-                  Talleres y Capacitaciones
-                </button>
-              </li>
             </ul>
+          </li>
+
+          <li className="navbar-item">
+            <button 
+              className={`navbar-link ${activeSection === 'talleres' ? 'navbar-link-active' : ''}`}
+              onClick={() => handleNavClick('talleres')}
+            >
+              Talleres
+            </button>
           </li>
 
           <li className="navbar-item navbar-dropdown">

@@ -48,6 +48,7 @@ export const recursosInclusionData = [
     titulo: "Ejemplo de Programa para Escuela Bíblica",
     descripcion: "Un programa ideal es aquel que puede adaptarse a las necesidades y realidades de los chicos, los recursos existentes y que se planifica intencional y progresivamente y se va evaluando y adaptando. Puede haber muchos tipos de programas, aquí va uno a modo de ejemplo.",
     archivos: [
+      { label: "General",          fileId: "1wpfQOlkKpOgmwX38baxh0LmoxKLGd4z1" },
       { label: "4 y 5 años",       fileId: "1J8EKJ7MOryVMpkc64z5zgvSPn7AQ76NM" },
       { label: "6 a 8 años",       fileId: "1ikkXYYIm-tiLlEtCINg-MnjmKgGqJ-hl" },
       { label: "9 a 10 años",      fileId: "11sUOMfpKfhP_WQ5RIfmAAkQf-W70jkId" },

@@ -18,6 +18,8 @@ import TapaLos5LenguajesDelAmorImg from "../assets/images/TapasDeLibros/TapaLos5
 import TapaLaVerdadDesnudaImg from "../assets/images/TapasDeLibros/TapaLaVerdadDesnuda.webp";
 import TapaLiderazgoGeneracionalImg from "../assets/images/TapasDeLibros/TapaLiderazgoGeneracional.webp";
 import TapaDistraidosYBrillantesImg from "../assets/images/TapasDeLibros/TapaDistraidosYBrillantes.webp";
+import TapaLoQueTodaMamaImg from "../assets/images/TapasDeLibros/TapaLoquetodamamádebesaberdesushijospequeños.webp";
+import TapaCosmovisionBiblicaImg from "../assets/images/TapasDeLibros/TapaCosmovisiónbíblica.webp";
 
 // Iconos
 import EnlaceIcon from "../assets/icons/Enlace.webp";
@@ -115,5 +117,17 @@ export const otrosLibros = [
     titulo: "Distraídos y Brillantes",
     autor: "Mirelys Bonilla",
     tapa: TapaDistraidosYBrillantesImg
+  },
+  {
+    id: 14,
+    titulo: "Lo que toda mamá debe saber de sus hijos pequeños",
+    autor: "Gloriana Montero",
+    tapa: TapaLoQueTodaMamaImg
+  },
+  {
+    id: 15,
+    titulo: "Cosmovisión bíblica, qué es, por qué importa y como moldear la cosmovisión de la próxima generación.",
+    autor: "Dr. Josh Mulvihill",
+    tapa: TapaCosmovisionBiblicaImg
   }
 ];

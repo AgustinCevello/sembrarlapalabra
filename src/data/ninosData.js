@@ -3,6 +3,7 @@
 // =================================================================
 import TapaEnsenanzaInclusivaImg from "../assets/images/TapasDeLibros/TapaEnseñanzaBiblicaInclusiva.webp";
 import TapaTeologiaSistematicaImg from "../assets/images/TapasDeLibros/TapaTeologiaSistematica.webp";
+import Tapa1DeCada7Img from "../assets/images/TapasDeLibros/Tapa1decada7.webp";
 import FotoLas3Img from "../assets/images/Variado/FotoLas3.webp";
 import FotoMiaImg from "../assets/images/Variado/FotoMia.webp";
 import FotoLasTresImg from "../assets/images/Variado/FotoLasTres.webp";
@@ -28,6 +29,13 @@ export const ninosData = {
       tapa: TapaTeologiaSistematicaImg,
       resena: "Presenta las verdades centrales de la fe cristiana de forma clara y pedagógica, acercando a los niños al regalo de la salvación y al crecimiento espiritual con lenguaje accesible y enfoque formativo.",
       mercadoLibreUrl: "https://www.mercadolibre.com.ar/teologia-sistematica-para-ninos/up/MLAU3672583651?pdp_filters=item_id:MLA1608201933"
+    },
+    {
+      id: 3,
+      titulo: "1 de cada 7. Salud Mental, tecnología y neurodivergencia. Guía para acompañar a niños y adolescentes desde la familia y la fe.",
+      tapa: Tapa1DeCada7Img,
+      resena: "Guía pastoral para que familias y líderes de la iglesia acompañen a niños y jóvenes ante crisis de salud mental, hiperconectividad y neurodivergencia, brindando un refugio seguro.",
+      mercadoLibreUrl: "https://www.mercadolibre.com.ar/1-de-cada-7-salud-mental-tecnologia-y-neurodivergencia/up/MLAU4655518589?pdp_filters=item_id:MLA3763915324"
     }
   ],
   talleres: [

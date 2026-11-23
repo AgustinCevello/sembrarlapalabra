@@ -1,22 +1,11 @@
 /* LibrosSugeridos.css */
 
 .libros-section {
-  padding: var(--spacing-xl) var(--spacing-md);
-  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
-  background: linear-gradient(180deg, #f7fd91 0%, var(--background-color) 100%);
-}
-
-.section-intro {
-  text-align: center;
-  font-size: 1.15rem;
-  color: var(--text-color);
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
-  line-height: 1.7;
+  background: var(--surface);
 }
 
 .libros-subsection {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: clamp(3.5rem, 8vw, 5rem);
 }
 
 .libros-subsection:last-child {
@@ -25,43 +14,19 @@
 
 .libros-destacados-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .otros-libros-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.25rem);
 }
 
-/* Efecto especial para libros destacados */
-.libros-destacados-grid .book-card {
-  border: 2px solid transparent;
-  transition: all var(--transition-normal);
-}
-
-.libros-destacados-grid .book-card:hover {
-  border-color: var(--secondary-color);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .libros-section {
-    padding: var(--spacing-lg) var(--spacing-sm);
-  }
-
-  .libros-destacados-grid,
+@media (max-width: 560px) {
+  /* Dos columnas en móvil para que la lista no sea interminable */
   .otros-libros-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--spacing-md);
-  }
-}
-
-@media (max-width: 480px) {
-  .libros-destacados-grid,
-  .otros-libros-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

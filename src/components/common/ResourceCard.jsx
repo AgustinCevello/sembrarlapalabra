@@ -1,96 +1,111 @@
 import { useState } from 'react';
+import { LuFileText, LuEye, LuDownload } from 'react-icons/lu';
 import Modal from './Modal';
 import Button from './Button';
 import { getDrivePreviewUrl, getDriveDownloadUrl } from '../../utils/driveHelpers';
-import DescargaIcon from '../../assets/icons/DescargaLogo.webp';
 import './ResourceCard.css';
 
-const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen }) => {
+const VersionSelector = ({ archivos, selected, onSelect, className = '' }) => (
+  <div className={`resource-card-selector ${className}`} role="group" aria-label="Elegir versión">
+    {archivos.map((archivo) => {
+      const active = selected.fileId === archivo.fileId;
+      return (
+        <button
+          key={archivo.fileId}
+          type="button"
+          className={`selector-btn ${active ? 'selector-btn--active' : ''}`}
+          onClick={() => onSelect(archivo)}
+          aria-pressed={active}
+        >
+          {archivo.label}
+        </button>
+      );
+    })}
+  </div>
+);
+
+const ResourceCard = ({ titulo, descripcion, fileId, archivos, imagen, icon: Icon = LuFileText, index = 0 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Si tiene múltiples archivos, el seleccionado empieza en el primero
   const tieneMultiples = archivos && archivos.length > 0;
-  const [archivoSeleccionado, setArchivoSeleccionado] = useState(
-    tieneMultiples ? archivos[0] : null
-  );
+  const [archivoSeleccionado, setArchivoSeleccionado] = useState(tieneMultiples ? archivos[0] : null);
 
-  // El fileId activo es el del archivo seleccionado, o el prop simple
   const activeFileId = tieneMultiples ? archivoSeleccionado.fileId : fileId;
 
-  const handleDownload = () => {
-    window.open(getDriveDownloadUrl(activeFileId), '_blank');
-  };
+  const downloadUrl = getDriveDownloadUrl(activeFileId);
 
   return (
     <>
-      <div className="resource-card">
+      <article className="resource-card reveal" style={{ '--reveal-delay': `${(index % 3) * 0.08}s` }}>
         {imagen && (
           <div className="resource-card-image">
-            <img src={imagen} alt={titulo} />
+            <img src={imagen} alt="" loading="lazy" decoding="async" />
           </div>
         )}
+
         <div className="resource-card-content">
+          <div className="resource-card-top">
+            <span className="resource-card-icon">
+              {Icon && <Icon aria-hidden="true" />}
+            </span>
+            <span className="resource-card-tag">
+              {tieneMultiples ? `${archivos.length} versiones` : 'PDF'}
+            </span>
+          </div>
+
           <h3 className="resource-card-title">{titulo}</h3>
           <p className="resource-card-description">{descripcion}</p>
 
-          {/* Selector de grupo de edad (solo si hay múltiples archivos) */}
           {tieneMultiples && (
-            <div className="resource-card-selector">
-              {archivos.map((archivo) => (
-                <button
-                  key={archivo.fileId}
-                  className={`selector-btn ${archivoSeleccionado.fileId === archivo.fileId ? 'selector-btn--active' : ''}`}
-                  onClick={() => setArchivoSeleccionado(archivo)}
-                >
-                  {archivo.label}
-                </button>
-              ))}
-            </div>
+            <VersionSelector
+              archivos={archivos}
+              selected={archivoSeleccionado}
+              onSelect={setArchivoSeleccionado}
+            />
           )}
 
           <div className="resource-card-actions">
-            <Button variant="primary" onClick={() => setIsModalOpen(true)}>
-              Ver más
+            <Button variant="primary" size="sm" icon={LuEye} onClick={() => setIsModalOpen(true)}>
+              Ver documento
             </Button>
-            <Button variant="outline" onClick={handleDownload}>
-              <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+            <Button
+              variant="outline"
+              size="sm"
+              icon={LuDownload}
+              href={downloadUrl}
+              aria-label={`Descargar ${titulo} en PDF`}
+              className="resource-card-download"
+            >
               Descargar
             </Button>
           </div>
         </div>
-      </div>
+      </article>
 
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title={titulo}
         footer={
-          <Button variant="primary" onClick={handleDownload}>
-            <img src={DescargaIcon} alt="Descargar" className="btn-icon-descarga" />
+          <Button variant="primary" icon={LuDownload} href={downloadUrl}>
             Descargar PDF
           </Button>
         }
       >
-
-        {/* Si tiene múltiples, mostrar selector también dentro del modal */}
         {tieneMultiples && (
-          <div className="resource-card-selector resource-card-selector--modal">
-            {archivos.map((archivo) => (
-              <button
-                key={archivo.fileId}
-                className={`selector-btn ${archivoSeleccionado.fileId === archivo.fileId ? 'selector-btn--active' : ''}`}
-                onClick={() => setArchivoSeleccionado(archivo)}
-              >
-                {archivo.label}
-              </button>
-            ))}
-          </div>
+          <VersionSelector
+            archivos={archivos}
+            selected={archivoSeleccionado}
+            onSelect={setArchivoSeleccionado}
+            className="resource-card-selector--modal"
+          />
         )}
 
         <iframe
           src={getDrivePreviewUrl(activeFileId)}
           title={tieneMultiples ? archivoSeleccionado.label : titulo}
           allow="autoplay"
+          loading="lazy"
         />
       </Modal>
     </>

@@ -1,56 +1,156 @@
-/*url(Button.css)*/
+/* Button.css */
 
 .btn {
+  --btn-pad-y: 0.7rem;
+  --btn-pad-x: 1.25rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out !important;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  isolation: isolate;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-normal),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
-/* BOTON PRIMARIO: Color base y Hover */
-.btn-primary,
-button.btn-primary,
-a.btn-primary {
-  background-color: #fa6d8c !important; /* Oscurecimiento visible */
-
-  color: #ffffff !important;
+.btn:active {
+  transform: translateY(0) scale(0.97);
 }
 
-.btn-primary:hover,
-button.btn-primary:hover,
-a.btn-primary:hover {
-  background-color: #f7315c !important; /* Oscurecimiento visible */
+.btn-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
 }
 
-/* BOTON SECUNDARIO: Color base y Hover */
-.btn-secondary,
-button.btn-secondary,
-a.btn-secondary {
-  background-color: #fa7a32 !important;
-  color: #ffffff !important;
+.btn:hover .btn-icon-right {
+  transform: translateX(3px);
 }
 
-.btn-secondary:hover,
-button.btn-secondary:hover,
-a.btn-secondary:hover {
-  background-color: #e3621d !important; /* Oscurecimiento visible */
+.btn-label {
+  min-width: 0;
 }
 
-/* BOTON OUTLINE */
+/* Tamaños */
+.btn-sm {
+  --btn-pad-y: 0.5rem;
+  --btn-pad-x: 0.95rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  --btn-pad-y: 0.95rem;
+  --btn-pad-x: 1.9rem;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Primario: degradado rosa → coral con brillo */
+.btn-primary {
+  color: var(--white);
+  background: var(--gradient-brand);
+  background-size: 160% 100%;
+  background-position: 0% 50%;
+  box-shadow: 0 6px 18px -8px rgba(199, 50, 95, 0.6);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-normal),
+    background-position 0.5s var(--ease-out);
+}
+
+.btn-primary:hover {
+  background-position: 100% 50%;
+  box-shadow: var(--shadow-rose);
+  transform: translateY(-2px);
+}
+
+/* Secundario: oscuro elegante */
+.btn-secondary {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: #45293f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -10px rgba(43, 26, 40, 0.6);
+}
+
+/* Outline */
 .btn-outline {
-  background-color: transparent !important;
-  color: #f42a55 !important;
-  border: 2px solid #f42a55 !important;
+  color: var(--rose-600);
+  background: transparent;
+  border-color: var(--rose-100);
 }
 
 .btn-outline:hover {
-  background-color: #f42a55 !important;
-  color: #ffffff !important;
+  color: var(--rose-700);
+  background: var(--rose-50);
+  border-color: var(--rose-500);
+  transform: translateY(-2px);
+}
+
+/* Suave (tinte) */
+.btn-soft {
+  color: var(--rose-700);
+  background: var(--rose-50);
+}
+
+.btn-soft:hover {
+  background: var(--rose-100);
+  transform: translateY(-2px);
+}
+
+/* Fantasma */
+.btn-ghost {
+  color: var(--ink-soft);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  color: var(--ink);
+  background: var(--cream-deep);
+}
+
+/* Claro (sobre fondos oscuros / imágenes) */
+.btn-light {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.btn-light:hover {
+  color: var(--ink);
+  background: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
 }

@@ -1,41 +1,103 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/ElSembradorLogo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Básico -->
-    <title>Sembrar La Palabra - Recursos Bíblicos</title>
-    <meta name="description" content="Recursos para la enseñanza bíblica y crecimiento espiritual de niños, adolescentes y jóvenes. Talleres y capacitaciones." />
-    <meta name="keywords" content="enseñanza bíblica, recursos cristianos, talleres, capacitaciones, niños, jóvenes, inclusión" />
-    <meta name="author" content="Sembrar La Palabra" />
-    
+
+    <!-- SEO básico -->
+    <title>Sembrar la Palabra | Recursos bíblicos para niños, adolescentes y jóvenes</title>
+    <meta
+      name="description"
+      content="Clases bíblicas para jóvenes, materiales para clases bíblicas inclusivas (TEA, TDAH), libros recomendados y talleres para iglesias, líderes, maestros y padres. Recursos en PDF para descargar."
+    />
+    <link rel="canonical" href="https://sembrarlapalabra.com.ar/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Sembrar la Palabra" />
+
+    <!-- Íconos (Google recomienda un favicon cuadrado, múltiplo de 48px) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#c7325f" />
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sembrarlapalabra.netlify.app/" />
-    <meta property="og:title" content="Sembrar La Palabra - Recursos Bíblicos" />
-    <meta property="og:description" content="Recursos para la enseñanza bíblica y crecimiento espiritual de niños, adolescentes y jóvenes." />
-    <meta property="og:image" content="https://sembrarlapalabra.netlify.app/ElSembradorLogo.png" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Sembrar la Palabra" />
+    <meta property="og:url" content="https://sembrarlapalabra.com.ar/" />
+    <meta property="og:title" content="Sembrar la Palabra | Recursos bíblicos para niños, adolescentes y jóvenes" />
+    <meta
+      property="og:description"
+      content="Clases, materiales inclusivos, libros recomendados y talleres para la enseñanza bíblica de niños, adolescentes y jóvenes."
+    />
+    <meta property="og:image" content="https://sembrarlapalabra.com.ar/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sembrar La Palabra Logo" />
-    <meta property="og:site_name" content="Sembrar La Palabra" />
-    
-    <!-- Twitter Card -->
+    <meta
+      property="og:image:alt"
+      content="Ilustración de dos maestros caminando por un sendero entre niños y jóvenes que leen la Biblia, con el logo de Sembrar la Palabra"
+    />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://sembrarlapalabra.netlify.app/" />
-    <meta name="twitter:title" content="Sembrar La Palabra - Recursos Bíblicos" />
-    <meta name="twitter:description" content="Recursos para la enseñanza bíblica y crecimiento espiritual de niños, adolescentes y jóvenes." />
-    <meta name="twitter:image" content="https://sembrarlapalabra.netlify.app/ElSembradorLogo.png" />
-    
+    <meta name="twitter:title" content="Sembrar la Palabra | Recursos bíblicos para niños, adolescentes y jóvenes" />
+    <meta
+      name="twitter:description"
+      content="Clases, materiales inclusivos, libros recomendados y talleres para la enseñanza bíblica de niños, adolescentes y jóvenes."
+    />
+    <meta name="twitter:image" content="https://sembrarlapalabra.com.ar/og-image.jpg" />
+
+    <!-- Datos estructurados: nombre del sitio y organización -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://sembrarlapalabra.com.ar/#website",
+            "url": "https://sembrarlapalabra.com.ar/",
+            "name": "Sembrar la Palabra",
+            "alternateName": ["Sembrar La Palabra", "sembrarlapalabra.com.ar"],
+            "description": "Recursos para la enseñanza bíblica y el crecimiento espiritual de niños, adolescentes y jóvenes.",
+            "inLanguage": "es-AR",
+            "publisher": { "@id": "https://sembrarlapalabra.com.ar/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://sembrarlapalabra.com.ar/#organization",
+            "name": "Sembrar la Palabra",
+            "url": "https://sembrarlapalabra.com.ar/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://sembrarlapalabra.com.ar/logo-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://sembrarlapalabra.com.ar/og-image.jpg",
+            "description": "Herramientas para iglesias, líderes, maestros y padres, para el evangelismo y crecimiento espiritual de niños, adolescentes y jóvenes.",
+            "email": "sembrarlapalabra@gmail.com",
+            "areaServed": { "@type": "Country", "name": "Argentina" },
+            "sameAs": ["https://www.instagram.com/sembrarlapalabra"]
+          }
+        ]
+      }
+    </script>
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Sin JavaScript, el contenido prerenderizado se muestra igual -->
+    <noscript><style>.reveal { opacity: 1 !important; }</style></noscript>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

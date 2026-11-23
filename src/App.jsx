@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { LuArrowUp } from 'react-icons/lu';
 import Navbar from './components/Header/Navbar';
 import Hero from './components/Hero/Hero';
 import Inclusion from './components/sections/Inclusion';
@@ -7,9 +9,19 @@ import LibrosSugeridos from './components/sections/LibrosSugeridos';
 import TalleresYCapacitaciones from './components/sections/TalleresYCapacitaciones';
 import Contacto from './components/sections/Contacto';
 import Footer from './components/Footer/Footer';
+import useReveal from './hooks/useReveal';
 import './App.css';
 
 function App() {
+  const [showTop, setShowTop] = useState(false);
+  useReveal();
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 900);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
@@ -23,6 +35,16 @@ function App() {
         <Contacto />
       </main>
       <Footer />
+
+      <button
+        type="button"
+        className={`back-to-top ${showTop ? 'is-visible' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Volver arriba"
+        tabIndex={showTop ? 0 : -1}
+      >
+        <LuArrowUp aria-hidden="true" />
+      </button>
     </div>
   );
 }

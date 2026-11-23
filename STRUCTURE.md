@@ -20,7 +20,9 @@ El proyecto es una aplicación moderna de React construida con **Vite**.
 - **Framework UI:** React (v19.2.0) y React DOM (v19.2.0)
 - **Librería de Íconos:** `react-icons` (v5.6.0)
 - **Estilos:** CSS puro (Vanilla CSS) utilizando variables globales nativas de CSS (Custom Properties) para el sistema de diseño (colores, espaciado, fuentes). No se utiliza Tailwind ni Bootstrap.
-- **Fuentes (Google Fonts):** `Playfair Display` (para encabezados) e `Inter` (para cuerpos de texto).
+- **Fuentes (Google Fonts):** `Fraunces` (encabezados), `Plus Jakarta Sans` (cuerpo de texto) y `Caveat` (acentos manuscritos).
+- **Iconografía:** `react-icons` (set Lucide `lu` + `fa6` para Instagram).
+- **Animaciones:** aparición al hacer scroll con un único `IntersectionObserver` (`hooks/useReveal.js` + clase `.reveal`); respeta `prefers-reduced-motion`.
 - **Linter:** ESLint (v9.39.1) con la nueva configuración plana (`eslint.config.js`).
 - **Tipo de Proyecto:** JavaScript Modules (`"type": "module"` en `package.json`).
 
@@ -64,3 +66,10 @@ El código fuente está organizado siguiendo el principio de separación por res
 - **Imágenes:** Se prioriza el uso de formato ligero como `.webp` y URLs estáticas alojadas o convertidas localmente.
 
 Esta estructura está lista para ser leída por un agente o desarrollador y ser fácilmente mantenida o extendida.
+
+## 5. SEO
+
+- **Prerenderizado:** `npm run build` genera el cliente (`vite build`), luego un bundle SSR (`src/entry-server.jsx`) y `scripts/prerender.js` inyecta el HTML renderizado en `dist/index.html` (marcador `<!--app-html-->`). En el navegador, `main.jsx` hidrata ese HTML (`hydrateRoot`). En desarrollo se monta normalmente.
+- **Metadatos:** título, descripción, canonical (`https://sembrarlapalabra.com.ar/`), Open Graph/Twitter y datos estructurados JSON-LD (`WebSite` + `Organization`) en `index.html`.
+- **Archivos públicos:** `robots.txt`, `sitemap.xml` (actualizar `lastmod` al publicar cambios grandes), `favicon.ico`, íconos PNG, `apple-touch-icon.png`, `logo-512.png` y `og-image.jpg` (1200×630).
+- **Enlaces:** la navegación usa `<a href="#seccion">` (rastreables) y las descargas de PDF son enlaces reales a Google Drive.

@@ -1,52 +1,69 @@
-import MercadoLibreIcon from '../../assets/icons/MercadoLibreLogo.webp';
+import { LuShoppingBag, LuExternalLink, LuArrowUpRight } from 'react-icons/lu';
+import Button from './Button';
 import './BookCard.css';
 
-const BookCard = ({ titulo, autor, tapa, descripcion, mercadoLibreUrl, enlaceExterno }) => {
+/**
+ * Tarjeta de libro.
+ * - variant "full": portada + título + descripción + acciones
+ * - variant "compact": solo portada, título y autor (grilla densa)
+ */
+const BookCard = ({
+  titulo,
+  autor,
+  tapa,
+  descripcion,
+  mercadoLibreUrl,
+  enlaceExterno,
+  variant = 'full',
+  index = 0,
+}) => {
+  const hasActions = mercadoLibreUrl || enlaceExterno;
+
   return (
-    <div className="book-card">
+    <article
+      className={`book-card book-card--${variant} reveal`}
+      style={{ '--reveal-delay': `${(index % 4) * 0.07}s` }}
+    >
       <div className="book-card-image">
-        <img src={tapa} alt={titulo} />
+        <img src={tapa} alt={`Tapa de ${titulo}`} loading="lazy" decoding="async" />
       </div>
+
       <div className="book-card-content">
         <h3 className="book-card-title">{titulo}</h3>
         {autor && <p className="book-card-author">{autor}</p>}
         {descripcion && <p className="book-card-description">{descripcion}</p>}
-        
-        <div className="book-card-links">
-          {mercadoLibreUrl && (
-            <a 
-              href={mercadoLibreUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="book-card-link"
-            >
-              <img 
-                src={MercadoLibreIcon}
-                alt="MercadoLibre" 
-                className="ml-icon-large"
-              />
-              Comprar
-            </a>
-          )}
-          
-          {enlaceExterno && (
-            <a 
-              href={enlaceExterno.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="book-card-link book-card-link-externo"
-            >
-              <img 
-                src={enlaceExterno.icono}
-                alt="Enlace externo" 
-                className="enlace-icon"
-              />
-              {enlaceExterno.texto}
-            </a>
-          )}
-        </div>
+
+        {hasActions && (
+          <div className="book-card-links">
+            {mercadoLibreUrl && (
+              <Button
+                href={mercadoLibreUrl}
+                variant="primary"
+                size="sm"
+                icon={LuShoppingBag}
+                iconRight={LuArrowUpRight}
+                block
+                aria-label={`Comprar ${titulo} en Mercado Libre`}
+              >
+                Comprar
+              </Button>
+            )}
+
+            {enlaceExterno && (
+              <Button
+                href={enlaceExterno.url}
+                variant="secondary"
+                size="sm"
+                icon={LuExternalLink}
+                block
+              >
+                {enlaceExterno.texto}
+              </Button>
+            )}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 };
 

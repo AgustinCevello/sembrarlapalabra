@@ -1,177 +1,240 @@
 /* Contacto.css */
 
 .contacto-section {
-  padding: var(--spacing-xl) var(--spacing-md);
-  /* Degradado: usar --background-color (#f7fd91) para el inicio y el final */
-  background: linear-gradient(180deg, var(--background-color) 0%, #f7fd91 100%);
+  background: var(--cream);
 }
 
-.contacto-content {
+/* Panel oscuro único con dos columnas */
+.contacto-panel {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  grid-template-columns: 1fr 1fr;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(224, 74, 118, 0.45), transparent 45%),
+    radial-gradient(circle at 0% 100%, rgba(226, 163, 58, 0.25), transparent 45%),
+    var(--ink);
+  border-radius: 32px;
+  box-shadow: 0 30px 60px -24px rgba(43, 26, 40, 0.55);
+  overflow: hidden;
 }
 
-/* Información de Contacto */
-.contacto-info-card {
-  background-color: var(--white);
-  padding: var(--spacing-lg);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.contacto-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.75rem, 4.5vw, 3.25rem);
 }
 
-.contacto-info-title {
+.contacto-col--talleres {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contacto-col-title {
+  margin-bottom: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  color: var(--white);
 }
 
-.contacto-item {
+/* Filas de contacto */
+.contacto-link {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
-  background-color: var(--background-color);
-  border-radius: 12px;
-  transition: all var(--transition-normal);
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0 -1rem;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
 }
 
-.contacto-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.contacto-link:hover {
+  background: rgba(255, 255, 255, 0.07);
 }
 
-.contacto-item:last-of-type {
-  margin-bottom: 0;
-}
-
-.contacto-icon-img {
-  width: 48px;
-  height: 48px;
+.contacto-link-icon {
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
-}
-
-.contacto-details h4 {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-xs);
-}
-
-.contacto-details a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-  word-break: break-all;
-}
-
-.contacto-details a:hover {
-  color: var(--secondary-color);
-}
-
-/* Talleres Info */
-.talleres-info-card {
-  background-color: var(--white);
-  padding: var(--spacing-lg);
+  width: 54px;
+  height: 54px;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  color: var(--white);
+  transition: transform 0.45s var(--ease-spring);
 }
 
-.talleres-info-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-md);
-  text-align: center;
+.contacto-link-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
-.talleres-info-description {
-  color: var(--text-color);
+.contacto-link-icon.is-mail {
+  background: linear-gradient(135deg, #ea4335, #c5221f);
+}
+
+.contacto-link-icon.is-ig {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.contacto-link:hover .contacto-link-icon {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.contacto-link-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-link-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.contacto-link-value {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contacto-link-arrow {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.contacto-link:hover .contacto-link-arrow {
+  color: #f7cf7a;
+  transform: translate(3px, -3px);
+}
+
+/* Talleres */
+.contacto-talleres-text {
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
-  margin-bottom: var(--spacing-md);
-  text-align: center;
 }
 
 .talleres-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.5rem 0 1.25rem;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
 }
 
 .talleres-list li {
-  color: var(--text-color);
-  padding: var(--spacing-sm);
-  background-color: var(--background-color);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.98rem;
+  font-weight: 500;
 }
 
-.talleres-list li:hover {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  transform: translateX(5px);
+.talleres-list-check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: var(--ink);
+  background: #f7cf7a;
+}
+
+.talleres-list-check svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 3;
+}
+
+.contacto-cta {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 /* Misión */
 .mision-section {
-  /* Degradado: usar --primary-color (#f42a55) y --secondary-color (#fa7a32) */
-  background: linear-gradient(
-    135deg,
-    var(--primary-color) 0%,
-    var(--secondary-color) 100%
-  );
-  color: var(--white);
-  padding: var(--spacing-lg);
-  border-radius: 16px;
+  max-width: 760px;
+  margin: clamp(3.5rem, 8vw, 5rem) auto 0;
   text-align: center;
-  /* Sombra basada en --primary-color */
-  box-shadow: 0 8px 24px rgba(244, 42, 85, 0.2);
+}
+
+.mision-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  color: var(--sage-700);
+  background: var(--sage-100);
+}
+
+.mision-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
 .mision-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: var(--spacing-md);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
 }
 
 .mision-text {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  max-width: 800px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contacto-section {
-    padding: var(--spacing-lg) var(--spacing-sm);
-  }
-
-  .contacto-content {
+@media (max-width: 860px) {
+  .contacto-panel {
     grid-template-columns: 1fr;
   }
 
-  .contacto-info-card,
-  .talleres-info-card {
-    padding: var(--spacing-md);
+  .contacto-col--talleres {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  .contacto-item {
-    flex-direction: column;
-    text-align: center;
+  .contacto-cta {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 560px) {
+  .contacto-panel {
+    border-radius: var(--radius-lg);
   }
 
-  .mision-section {
-    padding: var(--spacing-md);
+  .contacto-link {
+    margin: 0 -0.5rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .contacto-link-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .contacto-link-value {
+    font-size: 0.95rem;
+  }
+
+  .contacto-link-arrow {
+    display: none;
   }
 }

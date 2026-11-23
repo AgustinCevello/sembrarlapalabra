@@ -1,6 +1,7 @@
+import { LuMail, LuHeart } from 'react-icons/lu';
+import { FaInstagram } from 'react-icons/fa6';
+import { contactData } from '../../data/contactData';
 import LogoImg from '../../assets/icons/ElSembradorLogo.webp';
-import InstagramIcon from '../../assets/icons/InstagramLogo.webp';
-import GmailIcon from '../../assets/icons/GmailLogo.webp';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,43 +11,38 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
-          <div className="footer-section footer-logo-section">
-            <img 
-              src={LogoImg}
-              alt="Sembrar La Palabra Logo" 
-              className="footer-logo"
-            />
-            <p className="footer-tagline">
-              Sembrando la Palabra en corazones jóvenes
-            </p>
+          <div className="footer-brand">
+            <img src={LogoImg} alt="" className="footer-logo" width="64" height="64" loading="lazy" />
+            <div>
+              <p className="footer-name">
+                Sembrar <em>la</em> Palabra
+              </p>
+              <p className="footer-tagline">Sembrando la Palabra en corazones jóvenes</p>
+            </div>
           </div>
 
           <div className="footer-section">
             <h4 className="footer-title">Contacto</h4>
             <ul className="footer-contact">
               <li>
-                <a href="mailto:sembrarlapalabra@gmail.com" className="footer-contact-link">
-                  <img 
-                    src={GmailIcon}
-                    alt="Gmail"
-                    className="footer-icon"
-                  />
-                  <span>sembrarlapalabra@gmail.com</span>
+                <a href={`mailto:${contactData.email}`} className="footer-contact-link">
+                  <span className="footer-icon">
+                    <LuMail aria-hidden="true" />
+                  </span>
+                  <span>{contactData.email}</span>
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://www.instagram.com/sembrarlapalabra" 
-                  target="_blank" 
+                <a
+                  href={contactData.instagram.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="footer-contact-link"
                 >
-                  <img 
-                    src={InstagramIcon}
-                    alt="Instagram"
-                    className="footer-icon"
-                  />
-                  <span>@sembrarlapalabra</span>
+                  <span className="footer-icon">
+                    <FaInstagram aria-hidden="true" />
+                  </span>
+                  <span>{contactData.instagram.handle}</span>
                 </a>
               </li>
             </ul>
@@ -55,6 +51,9 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p>&copy; {currentYear} Sembrar La Palabra. Todos los derechos reservados.</p>
+          <p className="footer-made">
+            Hecho con <LuHeart aria-label="amor" /> para la próxima generación
+          </p>
         </div>
       </div>
     </footer>

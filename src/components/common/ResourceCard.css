@@ -1,26 +1,47 @@
 /* ResourceCard.css */
 
 .resource-card {
-  background-color: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-normal);
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+/* Barra de acento superior que crece al hover */
+.resource-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
 }
 
 .resource-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  border-color: var(--rose-100);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-card:hover::before {
+  transform: scaleX(1);
 }
 
 .resource-card-image {
-  width: 100%;
-  height: 200px;
+  height: 180px;
   overflow: hidden;
-  background-color: var(--light-gray);
+  background: var(--cream-deep);
 }
 
 .resource-card-image img {
@@ -35,125 +56,133 @@
 }
 
 .resource-card-content {
-  padding: var(--spacing-md);
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  padding: 1.5rem;
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.resource-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--rose-50);
+  color: var(--rose-600);
+  transition: transform 0.45s var(--ease-spring), background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.resource-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.resource-card:hover .resource-card-icon {
+  background: var(--gradient-brand);
+  color: var(--white);
+  transform: rotate(-6deg) scale(1.06);
+}
+
+.resource-card-tag {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-600);
+  background: var(--gold-100);
+  border-radius: var(--radius-pill);
 }
 
 .resource-card-title {
+  margin-bottom: 0.5rem;
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
 }
 
 .resource-card-description {
-  color: var(--text-color);
-  margin-bottom: var(--spacing-md);
   flex: 1;
-  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  white-space: pre-line;
 }
 
-/* ── Selector de grupo de edad ── */
+/* ── Selector de versión ── */
 .resource-card-selector {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-md);
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .selector-btn {
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 2px solid var(--primary-color);
-  background: transparent;
-  color: var(--primary-color);
+  padding: 0.35rem 0.8rem;
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .selector-btn:hover {
-  background: var(--primary-color);
-  color: var(--white);
+  color: var(--rose-700);
+  border-color: var(--rose-500);
 }
 
-.selector-btn--active {
-  background: var(--primary-color);
+.selector-btn--active,
+.selector-btn--active:hover {
   color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 .resource-card-selector--modal {
-  margin-bottom: var(--spacing-md);
   justify-content: center;
+  margin-bottom: 1rem;
 }
-/* ─────────────────────────────── */
 
+/* ── Acciones ── */
 .resource-card-actions {
   display: flex;
-  gap: var(--spacing-sm);
   flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 1.1rem;
+  border-top: 1px dashed var(--border);
 }
 
 .resource-card-actions .btn {
-  flex: 1;
-  min-width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-xs);
+  flex: 1 1 auto;
 }
-
-.btn-icon-descarga {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
-
-.btn-icon-ojo {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  filter: none;
-  transition: all var(--transition-fast);
-}
-
-.btn-outline .btn-icon-descarga {
-  filter: none;
-}
-
-.btn-outline:hover .btn-icon-descarga {
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
-
 
 @media (max-width: 768px) {
-  .resource-card-image {
-    height: 160px;
-  }
-
   .resource-card-content {
-    padding: var(--spacing-sm);
+    padding: 1.25rem;
   }
 
-  .resource-card-title {
-    font-size: 1.1rem;
-  }
-
-  .resource-card-actions {
-    flex-direction: column;
-  }
-
-  .resource-card-actions .btn {
-    width: 100%;
-  }
-
-  .selector-btn {
-    font-size: 0.78rem;
-    padding: 4px 10px;
+  .resource-card:hover {
+    transform: none;
   }
 }
+

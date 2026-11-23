@@ -1,162 +1,174 @@
 /* Modal.css */
 
-/* ── Overlay ── */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  inset: 0;
+  z-index: 1100;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
-  padding: var(--spacing-sm);
-  animation: fadeIn 0.3s ease;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(30, 14, 26, 0.6);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  animation: modalFade 0.25s ease both;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@keyframes modalFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* ── Contenedor principal del modal ──
-   Usa flexbox en columna para dividir header / body / footer.
-   max-height impide que crezca más allá de la ventana. */
 .modal-content {
-  background-color: var(--white);
-  border-radius: 12px;
-  width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.3s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  /* Eliminar cualquier overflow del contenedor principal */
+  width: 100%;
+  max-width: 920px;
+  max-height: 90vh;
+  max-height: 90dvh;
   overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 80px rgba(30, 14, 26, 0.4);
+  animation: modalIn 0.4s var(--ease-out) both;
 }
 
-@keyframes slideUp {
+@keyframes modalIn {
   from {
-    transform: translateY(50px);
     opacity: 0;
+    transform: translateY(24px) scale(0.98);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: none;
   }
 }
 
-/* ── Header fijo ── */
 .modal-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md);
-  border-bottom: 1px solid var(--light-gray);
-  /* flex-shrink: 0 garantiza que no se comprima */
+  justify-content: space-between;
+  gap: 1rem;
   flex-shrink: 0;
-  background-color: var(--white);
+  padding: 1.1rem 1.25rem 1.1rem 1.75rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .modal-title {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
 }
 
 .modal-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: var(--text-color);
-  cursor: pointer;
-  transition: color var(--transition-fast);
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform 0.35s var(--ease-spring);
+}
+
+.modal-close svg {
+  width: 22px;
+  height: 22px;
 }
 
 .modal-close:hover {
-  color: var(--primary-color);
+  color: var(--rose-600);
+  background: var(--rose-50);
+  transform: rotate(90deg);
 }
 
-/* ── Body scrollable ──
-   Este es el ÚNICO contenedor con scroll.
-   flex: 1 toma todo el espacio disponible entre header y footer.
-   overflow-y: auto permite scroll solo cuando el contenido lo necesita. */
 .modal-body {
-  padding: var(--spacing-md);
-  overflow-y: auto;
   flex: 1;
-  min-height: 0; /* Necesario para que flex+overflow funcione correctamente */
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.5rem 1.75rem;
 }
 
 .modal-body iframe {
+  display: block;
   width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 8px;
+  height: min(62vh, 640px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--cream);
 }
 
-/* ── Footer fijo ──
-   Siempre visible al pie del modal, sin necesidad de scroll.
-   flex-shrink: 0 garantiza que no se comprima. */
 .modal-footer {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-top: 1px solid var(--light-gray);
-  background-color: var(--white);
+  justify-content: center;
+  gap: 0.75rem;
   flex-shrink: 0;
-  gap: var(--spacing-sm);
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--cream);
 }
 
-.modal-footer .btn {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  min-width: 180px;
-  justify-content: center;
-}
+/* Móvil: bottom sheet */
+@media (max-width: 640px) {
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
   .modal-content {
-    max-height: 95vh;
-    margin: var(--spacing-xs);
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-radius: 24px 24px 0 0;
+    animation-name: sheetIn;
+  }
+
+  @keyframes sheetIn {
+    from { transform: translateY(100%); }
+    to { transform: none; }
   }
 
   .modal-header {
-    padding: var(--spacing-sm);
+    position: relative;
+    padding: 1.4rem 1rem 1rem 1.25rem;
   }
 
-  .modal-title {
-    font-size: 1.25rem;
+  /* "Tirador" del bottom sheet */
+  .modal-header::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--border);
+    transform: translateX(-50%);
   }
 
   .modal-body {
-    padding: var(--spacing-sm);
+    padding: 1rem 1.25rem;
   }
 
   .modal-body iframe {
-    height: 400px;
+    height: 58vh;
+    height: 58dvh;
   }
 
   .modal-footer {
-    padding: var(--spacing-sm);
+    padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom));
+  }
+
+  .modal-footer .btn {
+    width: 100%;
   }
 }
